@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  /* Define the custom marquee keyframe track */
+  --keyframes-marquee: {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(calc(-50% - 12px)); }
+  }
+  
+  /* Bind keyframe to utility name */
+  --animate-marquee: marquee 25s linear infinite;
+}

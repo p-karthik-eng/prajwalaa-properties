@@ -1,4 +1,5 @@
 import AboutUs from "@/components/AboutUs";
+import ExpertTeam from "@/components/ExpertTeam";
 import SpecificationsFAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50">
       <Navbar />
       <HeroSection />
+      <ExpertTeam />
       <AboutUs />
       <VideoSection />
       <GallerySection />
@@ -24,6 +26,7 @@ export default function Home() {
       <WhyChooseUs />
       <LocationSection />
       <Footer />
+      
     </main>
   );
 }
