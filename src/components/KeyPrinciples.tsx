@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { motion, Variants } from 'framer-motion';
 
 interface Principle {
   id: string;
@@ -38,12 +41,28 @@ export default function KeyPrinciples() {
   // Duplicate the array to make the infinite horizontal marquee run seamlessly
   const duplicatedPrinciples = [...principles, ...principles, ...principles];
 
+  // Motion variants for the header section elements
+  const headerVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: 'easeOut' } 
+    }
+  };
+
   return (
     <section className="w-full bg-[#fcfcfc] text-[#111111] py-20 overflow-hidden font-sans border-t border-gray-100">
       <div className="w-full mx-auto">
         
-        {/* --- CENTERED TOP HEADING LAYOUT --- */}
-        <div className="text-center mb-16 px-6 flex flex-col items-center max-w-3xl mx-auto">
+        {/* --- CENTERED TOP HEADING LAYOUT (Animated with Framer Motion) --- */}
+        <motion.div 
+          className="text-center mb-16 px-6 flex flex-col items-center max-w-3xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
+        >
           {/* Highlight Badge */}
           <div className="inline-flex items-center space-x-1.5 bg-[#d39443]/10 text-[#d39443] px-4 py-1.5 rounded-full mb-4">
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
@@ -61,7 +80,7 @@ export default function KeyPrinciples() {
           <p className="text-gray-500 text-sm md:text-base mt-4 font-light leading-relaxed max-w-2xl">
             The structural foundational ethics guiding every blueprint, deployment strategy, and customer interaction.
           </p>
-        </div>
+        </motion.div>
 
         {/* --- SERVER-SAFE INJECTED CSS FOR SLOW CAROUSEL LOOP --- */}
         <style dangerouslySetInnerHTML={{__html: `
@@ -85,7 +104,6 @@ export default function KeyPrinciples() {
           {/* Rolling Track */}
           <div className="principles-marquee-track shrink-0">
             {duplicatedPrinciples.map((item, index) => {
-              // Smooth alternating pastel/tint colors matching the screenshot palette
               const backgroundColors = [
                 "bg-[#f5f3ff]", // Smooth Lavender Tint
                 "bg-[#fffbeb]", // Smooth Light Amber Tint
@@ -95,9 +113,15 @@ export default function KeyPrinciples() {
               const cardBg = backgroundColors[index % backgroundColors.length];
 
               return (
-                <div 
+                <motion.div 
                   key={`${item.id}-${index}`}
-                  className={`w-[300px] md:w-[360px] shrink-0 group relative p-8 ${cardBg} border border-black/5 rounded-2xl transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.05)] hover:-translate-y-1 flex flex-col justify-between whitespace-normal`}
+                  className={`w-[300px] md:w-[360px] shrink-0 group relative p-8 ${cardBg} border border-black/5 rounded-2xl flex flex-col justify-between whitespace-normal cursor-pointer`}
+                  // Adding ultra-smooth layout micro-interactions to single cards during marquee pauses
+                  whileHover={{ 
+  y: -6, 
+  boxShadow: "0 20px 50px rgba(0,0,0,0.06)", // Fixed property name
+  transition: { duration: 0.3, ease: "easeOut" }
+}}
                 >
                   {/* Top Corner Structural Indicator */}
                   <span className="absolute right-6 top-5 font-serif text-3xl font-bold text-gray-300/60 group-hover:text-[#d39443]/30 transition-colors duration-300">
@@ -128,7 +152,7 @@ export default function KeyPrinciples() {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               );
             })}
           </div>

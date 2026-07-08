@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 interface GalleryItem {
   id: number;
@@ -20,12 +23,28 @@ export default function GallerySection() {
   // Duplicate the array once to make the infinite loop seamless
   const duplicatedItems = [...galleryItems, ...galleryItems];
 
+  // Entrance variants for the heading text block (slides up smoothly from down)
+  const headingVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: 'easeOut' } 
+    }
+  };
+
   return (
     <section className="w-full bg-white text-[#111111] py-16 overflow-hidden font-sans">
       <div className="w-full mx-auto">
         
-        {/* Decorated Section Heading */}
-        <div className="text-center mb-16 px-6 flex flex-col items-center">
+        {/* --- ANIMATED SECTION HEADING --- */}
+        <motion.div 
+          className="text-center mb-16 px-6 flex flex-col items-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headingVariants}
+        >
           <span className="text-xs font-bold tracking-[0.25em] text-amber-600 uppercase mb-3">
             Our Amenities
           </span>
@@ -34,7 +53,7 @@ export default function GallerySection() {
           </h2>
           {/* Minimalist Accent Line Divider */}
           <div className="w-12 h-[2px] bg-amber-600/60 rounded-full mt-1"></div>
-        </div>
+        </motion.div>
 
         {/* Injecting the keyframes directly via an HTML style block */}
         <style dangerouslySetInnerHTML={{__html: `
@@ -58,9 +77,15 @@ export default function GallerySection() {
           {/* Inner Track running our pure CSS animation */}
           <div className="pure-css-marquee shrink-0 min-w-full">
             {duplicatedItems.map((item, index) => (
-              <div 
+              <motion.div 
                 key={`${item.id}-${index}`} 
-                className="group flex flex-col bg-white border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden rounded-sm transition-transform duration-300 hover:-translate-y-1 shrink-0 w-[280px] sm:w-[350px] md:w-[400px]"
+                className="group flex flex-col bg-white border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden rounded-sm shrink-0 w-[280px] sm:w-[350px] md:w-[400px] cursor-pointer"
+                // Interactive micro-interaction for single cards on hover
+                whileHover={{ 
+                  y: -5,
+                  boxShadow: "0 12px 30px rgba(0, 0, 0, 0.08)",
+                  transition: { duration: 0.3, ease: "easeOut" }
+                }}
               >
                 {/* Image Frame Container */}
                 <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden">
@@ -72,7 +97,7 @@ export default function GallerySection() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

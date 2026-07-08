@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 interface FAQItem {
   id: number;
@@ -15,7 +16,30 @@ export default function FAQSection() {
     setOpenId(openId === id ? null : id);
   };
 
-  // Questions 1 to 5 for the Left Grid Column
+  // Motion variants for the main section title
+  const headingVariants: Variants = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.8, ease: 'easeOut' } 
+    }
+  };
+
+  // Base configurations for sequential list card item reveals
+  const cardVariants = (index: number): Variants => ({
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+        delay: index * 0.12 // Stagger card slide-ins line-by-line
+      }
+    }
+  });
+
   const leftColumnFAQs: FAQItem[] = [
     {
       id: 1,
@@ -44,7 +68,6 @@ export default function FAQSection() {
     }
   ];
 
-  // Questions 6 to 10 for the Right Grid Column
   const rightColumnFAQs: FAQItem[] = [
     {
       id: 6,
@@ -77,29 +100,38 @@ export default function FAQSection() {
     <section 
       className="relative w-full min-h-screen py-20 px-6 md:px-16 lg:px-24 bg-cover bg-center bg-fixed bg-no-repeat overflow-hidden"
       style={{ 
-        // Remember to swap this out with your custom background asset if desired, e.g., url('/faq-bg.jpeg')
         backgroundImage: `linear-gradient(rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.82)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80')` 
       }}
     >
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Section Heading */}
-        <div className="text-center mb-16">
+        {/* Section Heading with Entrance Animation */}
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headingVariants}
+        >
           <h2 className="text-3xl md:text-5xl font-serif font-bold tracking-widest uppercase text-white">
             Frequently Asked Questions
           </h2>
           <div className="w-24 h-[2px] bg-[#d39443] mx-auto mt-4 opacity-80"></div>
-        </div>
+        </motion.div>
 
         {/* Two-Column Layout Matrix */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-4 items-start">
           
           {/* Left Column Stack */}
           <div className="space-y-4">
-            {leftColumnFAQs.map((item) => (
-              <div 
+            {leftColumnFAQs.map((item, index) => (
+              <motion.div 
                 key={item.id} 
                 className="bg-white text-[#111111] border border-gray-200 shadow-xl overflow-hidden transition-all duration-300 rounded-sm"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={cardVariants(index)}
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
@@ -116,26 +148,38 @@ export default function FAQSection() {
                   </svg>
                 </button>
                 
-                {/* Expandable Panel */}
-                <div 
-                  className={`transition-all duration-300 ease-in-out font-sans overflow-hidden ${
-                    openId === item.id ? 'max-h-60 border-t border-gray-100 opacity-100 py-4 px-6' : 'max-h-0 opacity-0 pointer-events-none'
-                  }`}
-                >
-                  <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              </div>
+                {/* Smooth Animated Accordion Drawer */}
+                <AnimatePresence initial={false}>
+                  {openId === item.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="border-t border-gray-100 font-sans overflow-hidden"
+                    >
+                      <div className="py-4 px-6">
+                        <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
 
           {/* Right Column Stack */}
           <div className="space-y-4">
-            {rightColumnFAQs.map((item) => (
-              <div 
+            {rightColumnFAQs.map((item, index) => (
+              <motion.div 
                 key={item.id} 
                 className="bg-white text-[#111111] border border-gray-200 shadow-xl overflow-hidden transition-all duration-300 rounded-sm"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={cardVariants(index)}
               >
                 <button
                   onClick={() => toggleAccordion(item.id)}
@@ -152,17 +196,25 @@ export default function FAQSection() {
                   </svg>
                 </button>
                 
-                {/* Expandable Panel */}
-                <div 
-                  className={`transition-all duration-300 ease-in-out font-sans overflow-hidden ${
-                    openId === item.id ? 'max-h-60 border-t border-gray-100 opacity-100 py-4 px-6' : 'max-h-0 opacity-0 pointer-events-none'
-                  }`}
-                >
-                  <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
-                    {item.answer}
-                  </p>
-                </div>
-              </div>
+                {/* Smooth Animated Accordion Drawer */}
+                <AnimatePresence initial={false}>
+                  {openId === item.id && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="border-t border-gray-100 font-sans overflow-hidden"
+                    >
+                      <div className="py-4 px-6">
+                        <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
+                          {item.answer}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
 

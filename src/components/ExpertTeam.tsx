@@ -1,19 +1,57 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { motion, Variants } from 'framer-motion';
 
 export default function ExpertTeam() {
+  // Explicitly typing variants as 'Variants' to keep TypeScript completely happy
+  const headerVariants: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: 'easeOut' }
+    }
+  };
+
+  const leftSideVariants: Variants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.7, ease: 'easeOut' }
+    }
+  };
+
+  const rightSideVariants: Variants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.7, ease: 'easeOut' }
+    }
+  };
+
   return (
-    <section id="property-experts" className="section-padding bg-gradient-to-br from-amber-50 via-white to-amber-50">
-      <div className="container-custom">
-        {/* Header Section */}
-        <div className="text-center mb-10 sm:mb-14">
+    <section id="property-experts" className="section-padding bg-gradient-to-br from-amber-50 via-white to-amber-50 overflow-hidden">
+      <div className="container-custom pt-50">
+        
+        {/* Header Section: Slides up from down */}
+        <motion.div 
+          className="text-center mb-10 sm:mb-14"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={headerVariants}
+        >
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
             Meet Our <span className="gradient-text">Expert Property Team</span>
           </h2>
           <p className="font-body text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Led by Mohan Rayapudi and R Jayarekha — certified wealth and asset specialists focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
           </p>
-        </div>
+        </motion.div>
 
         {/* Team Grid */}
         <div className="flex flex-col gap-14 sm:gap-16">
@@ -21,18 +59,42 @@ export default function ExpertTeam() {
           {/* Portfolio Director - Mohan Rayapudi */}
           <div id="mohan-rayapudi" className="max-w-6xl mx-auto scroll-mt-28">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl bg-white shadow-xl border border-amber-100/80 overflow-hidden">
-              <div className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px]" style={{ aspectRatio: '1080 / 1616' }}>
+              
+              {/* Left Side Content (Image) */}
+              <motion.div 
+                className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px]" 
+                style={{ aspectRatio: '1080 / 1616' }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={leftSideVariants}
+              >
                 <Image
                   alt="Mohan Rayapudi, Principal Property Strategist"
-                  src="https://picsum.photos/1080/1616?random=1"
+                  src="https://picsum.photos/1080/1616"
                   fill
                   priority
                   unoptimized
                   sizes="(max-w-1024px) 100vw, 50vw"
                   className="object-cover object-[center_22%]"
                 />
-              </div>
-              <div className="p-6 sm:p-8 lg:p-10 text-left">
+              </motion.div>
+
+              {/* Right Side Content (Text & Info) - Delayed stagger */}
+              <motion.div 
+                className="p-6 sm:p-8 lg:p-10 text-left"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, x: 60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.7, ease: 'easeOut', delay: 0.5 }
+                  }
+                }}
+              >
                 <p className="font-accent text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] text-amber-700/90 uppercase mb-3">
                   Meet The Man Behind The Brand
                 </p>
@@ -63,25 +125,49 @@ export default function ExpertTeam() {
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
 
           {/* Legal & Compliance Specialist - R Jayarekha */}
           <div id="jayarekha" className="max-w-6xl mx-auto scroll-mt-28">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl bg-white shadow-xl border border-amber-100/80 overflow-hidden">
-              <div className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px] lg:order-2" style={{ aspectRatio: '1080 / 1616' }}>
+              
+              {/* Visually on the right on desktop */}
+              <motion.div 
+                className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px] lg:order-2" 
+                style={{ aspectRatio: '1080 / 1616' }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={rightSideVariants}
+              >
                 <Image
                   alt="R Jayarekha, Compliance &amp; Acquisitions Expert"
-                  src="https://picsum.photos/1080/1616?random=2"
+                  src="https://picsum.photos/1080/1616"
                   fill
                   loading="lazy"
                   unoptimized
                   sizes="(max-w-1024px) 100vw, 50vw"
                   className="object-cover object-[center_22%]"
                 />
-              </div>
-              <div className="p-6 sm:p-8 lg:p-10 text-left lg:order-1">
+              </motion.div>
+
+              {/* Visually on the left on desktop - Delayed stagger */}
+              <motion.div 
+                className="p-6 sm:p-8 lg:p-10 text-left lg:order-1"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, x: -60 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.7, ease: 'easeOut', delay: 0.5 }
+                  }
+                }}
+              >
                 <p className="font-accent text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] text-amber-700/90 uppercase mb-3">
                   Expert Specialist
                 </p>
@@ -112,7 +198,7 @@ export default function ExpertTeam() {
                     <path d="m12 5 7 7-7 7"></path>
                   </svg>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </div>
 

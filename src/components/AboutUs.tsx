@@ -119,7 +119,6 @@ export default function AboutUs() {
               style={{ transitionDelay: '500ms' }}
             >
               <div>
-                <div className="text-xs font-mono text-[#d39443] mb-4">[ PILLAR 01 ]</div>
                 <h4 className="text-xl font-serif mb-3 tracking-wide">Uncompromised Quality</h4>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">
                   Utilizing heavy-gauge reinforced frameworks and verified premium materials, ensuring a standard of luxury that stands securely through generations.
@@ -133,7 +132,6 @@ export default function AboutUs() {
               style={{ transitionDelay: '600ms' }}
             >
               <div>
-                <div className="text-xs font-mono text-[#d39443] mb-4">[ PILLAR 02 ]</div>
                 <h4 className="text-xl font-serif mb-3 tracking-wide">Forward Innovation</h4>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">
                   Configuring modern, open-plan layout dynamics optimized completely for cross-ventilation, abundant natural illumination, and premium spatial architecture.
@@ -147,7 +145,6 @@ export default function AboutUs() {
               style={{ transitionDelay: '700ms' }}
             >
               <div>
-                <div className="text-xs font-mono text-[#d39443] mb-4">[ PILLAR 03 ]</div>
                 <h4 className="text-xl font-serif mb-3 tracking-wide">Customer Satisfaction</h4>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">
                   Honoring clear operational transparency, strictly seamless delivery timelines, and dedicated post-handover customer care infrastructure.
