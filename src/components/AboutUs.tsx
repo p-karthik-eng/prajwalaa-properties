@@ -55,7 +55,7 @@ export default function AboutUs() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full bg-white text-[#111111] py-20 px-6 md:px-16 lg:px-24 overflow-hidden font-sans border-t border-zinc-100"
+      className="relative w-full bg-white text-[#111111] py-14 sm:py-20 px-4 sm:px-6 md:px-16 lg:px-24 overflow-hidden font-sans border-t border-zinc-100"
     >
       {/* Decorative Grid Lines */}
       <div className="absolute inset-0 grid grid-cols-4 pointer-events-none opacity-[0.03]">
@@ -141,7 +141,7 @@ export default function AboutUs() {
       <div className="max-w-7xl mx-auto relative z-10">
         
         {/* --- SECTION HEADER --- */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-zinc-200 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 border-b border-zinc-200 pb-6 sm:pb-8">
           <div className={`reveal-node ${isVisible ? 'active' : ''}`} style={{ transitionDelay: '100ms' }}>
             <span className="text-[#d39443] text-sm uppercase tracking-[0.25em] font-medium block mb-2">
               Who We Are

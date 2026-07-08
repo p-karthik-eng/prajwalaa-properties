@@ -98,7 +98,7 @@ export default function FAQSection() {
 
   return (
     <section 
-      className="relative w-full min-h-screen py-20 px-6 md:px-16 lg:px-24 bg-cover bg-center bg-fixed bg-no-repeat overflow-hidden"
+      className="relative w-full min-h-screen py-14 sm:py-20 px-4 sm:px-6 md:px-16 lg:px-24 bg-cover bg-center bg-scroll md:bg-fixed bg-no-repeat overflow-hidden"
       style={{ 
         backgroundImage: `linear-gradient(rgba(17, 17, 17, 0.82), rgba(17, 17, 17, 0.82)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80')` 
       }}

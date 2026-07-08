@@ -29,7 +29,7 @@ export default function LegacySection() {
 
   return (
     <section id="legacy-split" className="w-full bg-white overflow-hidden font-sans">
-      <div className="w-full grid grid-cols-1 lg:grid-cols-12 min-h-[500px] lg:min-h-[600px]">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-12 lg:min-h-[600px]">
         
         {/* Left Side: Image Canvas Frame (~66.6% width) */}
         <motion.div 

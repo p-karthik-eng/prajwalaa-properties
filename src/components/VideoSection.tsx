@@ -35,7 +35,7 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="relative w-full bg-white text-[#111111] py-16 px-6 md:px-16 lg:px-24 overflow-hidden font-sans border-t border-gray-100">
+    <section className="relative w-full bg-white text-[#111111] py-12 sm:py-16 px-4 sm:px-6 md:px-16 lg:px-24 overflow-hidden font-sans border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
         
         {/* Section Heading Row with Motion Intro */}

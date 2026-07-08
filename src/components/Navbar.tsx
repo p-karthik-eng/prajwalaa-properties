@@ -75,12 +75,12 @@ export default function Navbar() {
             />
           </div>
 
-          <div className="flex flex-col justify-center leading-none pl-1">
-            <div className="flex items-baseline space-x-1.5">
-              <span className="font-serif text-xl font-bold tracking-tight text-[#a64f17] uppercase">
+          <div className="flex flex-col justify-center leading-none pl-1 min-w-0">
+            <div className="flex items-baseline space-x-1.5 min-w-0">
+              <span className="font-serif text-xl font-bold tracking-tight text-[#a64f17] uppercase truncate">
                 Prajwalaa
               </span>
-              <span className="text-[13px] font-sans font-bold tracking-wide text-neutral-800 uppercase">
+              <span className="text-[13px] font-sans font-bold tracking-wide text-neutral-800 uppercase shrink-0">
                 Ankura
               </span>
             </div>

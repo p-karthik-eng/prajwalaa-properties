@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="w-full bg-[#fafafa] text-[#111111] py-16 px-6 font-sans overflow-hidden border-t border-b border-gray-100">
+    <section className="w-full bg-[#fafafa] text-[#111111] py-12 sm:py-16 px-4 sm:px-6 md:px-8 font-sans overflow-hidden border-t border-b border-gray-100">
       <div className="max-w-2xl mx-auto">
         
         {/* Section Heading with Motion Intro */}

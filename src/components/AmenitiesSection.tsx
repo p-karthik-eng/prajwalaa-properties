@@ -83,14 +83,14 @@ export default function AmenitiesSection() {
                 className="flex flex-col items-center text-center group min-w-[150px] shrink-0"
               >
                 {/* Circular Image Container Frame */}
-                <div className="w-24 h-24 rounded-full border border-[#d5a86a] bg-white flex items-center justify-center overflow-hidden p-4 mb-4 shadow-sm transition-transform duration-300 group-hover:scale-105 relative z-20">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border border-[#d5a86a] bg-white flex items-center justify-center overflow-hidden p-3 sm:p-4 mb-4 shadow-sm transition-transform duration-300 group-hover:scale-105 relative z-20">
                   <div className="relative w-full h-full">
                     <Image
                       loader={cacheBustLoader}
                       src={item.iconSrc}
                       alt={item.title}
                       fill
-                      sizes="96px"
+                      sizes="(max-width: 640px) 80px, 96px"
                       className="object-contain sepia-[0.2] saturate-[1.5] hue-rotate-[8deg] brightness-[0.95]"
                     />
                   </div>

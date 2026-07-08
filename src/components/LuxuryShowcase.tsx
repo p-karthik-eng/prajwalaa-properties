@@ -100,7 +100,7 @@ export default function LuxuryShowcase() {
   };
 
   return (
-    <section className="w-full bg-white text-[#111111] py-16 md:py-24 px-6 md:px-16 lg:px-24 font-sans overflow-hidden">
+    <section className="w-full bg-white text-[#111111] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* --- BRAND INTRODUCTION HEADER --- */}

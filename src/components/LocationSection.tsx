@@ -51,11 +51,11 @@ export default function LocationSection() {
         </div>
 
         {/* Map and Floating Panel Wrapper Container */}
-        <div className="relative w-full h-[600px] md:h-[650px] rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-neutral-50">
+        <div className="flex flex-col sm:block sm:relative w-full rounded-lg overflow-hidden border border-neutral-200 shadow-sm bg-neutral-50">
           
           {/* Publicly Embedded Map Canvas (No API Key Required) */}
           <iframe
-            className="w-full h-full border-none grayscale-[10%] contrast-[102%]"
+            className="w-full h-[350px] sm:h-[450px] md:h-[600px] lg:h-[650px] border-none grayscale-[10%] contrast-[102%]"
             title="Prajwalaa Ankura Location Map"
             src={`https://maps.google.com/maps?q=${mapQuery}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
             allowFullScreen
@@ -64,7 +64,7 @@ export default function LocationSection() {
           />
 
           {/* Floating Address Panel Overlay Card */}
-          <div className="absolute top-4 left-4 bottom-4 w-[calc(100%-32px)] sm:w-[380px] bg-white rounded shadow-xl border border-neutral-100 p-6 z-10 flex flex-col justify-between overflow-y-auto">
+          <div className="relative w-full p-6 bg-white border-t border-neutral-100 sm:absolute sm:top-4 sm:left-4 sm:bottom-4 sm:w-[380px] sm:border-t-0 sm:border sm:border-neutral-100 sm:rounded sm:shadow-xl sm:z-10 flex flex-col justify-between overflow-y-auto">
             <div>
               {/* Header section */}
               <div className="flex items-start justify-between border-b border-neutral-100 pb-4 mb-6">
