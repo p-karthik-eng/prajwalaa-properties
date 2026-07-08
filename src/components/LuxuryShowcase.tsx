@@ -69,31 +69,33 @@ export default function LuxuryShowcase() {
     return `${src}?v=prajwalaa-2026`;
   };
 
-  // Smooth text fade animation config
   const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: { 
       opacity: 1, 
       y: 0, 
-      transition: { duration: 0.7, ease: 'easeOut' } 
+      transition: { duration: 0.6, ease: 'easeOut' } 
     }
   };
 
-  // Horizontal Premium Paper Roll Unfurl Animation
-  const paperRollHorizontal: Variants = {
-    hidden: { 
-      clipPath: 'inset(0% 100% 0% 0%)', 
-      scaleX: 0.85, 
-      skewX: 1,
-      transformOrigin: 'left center' 
-    },
+  // Safe container scale reveal
+  const containerReveal: Variants = {
+    hidden: { opacity: 0, scale: 0.98 },
     visible: { 
-      clipPath: 'inset(0% 0% 0% 0%)', 
-      scaleX: 1,
-      skewX: 0,
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.5 } 
+    }
+  };
+
+  // THE SAFEPAPER ROLL: Shrinks down to scaleX: 0 towards the right side
+  const paperUnfurlOverlay: Variants = {
+    hidden: { scaleX: 1 },
+    visible: { 
+      scaleX: 0,
       transition: { 
-        duration: 1.3, 
-        ease: [0.25, 1, 0.5, 1], 
+        duration: 1.1, 
+        ease: [0.25, 1, 0.5, 1],
         delay: 0.1 
       } 
     }
@@ -105,7 +107,7 @@ export default function LuxuryShowcase() {
         
         {/* --- BRAND INTRODUCTION HEADER --- */}
         <motion.div 
-          className="flex flex-col items-center text-center mb-20 max-w-3xl mx-auto"
+          className="flex flex-col items-center text-center mb-14 md:mb-20 max-w-3xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -123,41 +125,44 @@ export default function LuxuryShowcase() {
         </motion.div>
 
         {/* --- FEATURE MATRIX SHOWCASE --- */}
-        <div className="flex flex-col gap-20 md:gap-28 lg:gap-36">
+        <div className="flex flex-col gap-16 sm:gap-20 md:gap-28 lg:gap-36">
           {promiseItems.map((item, index) => {
             const isEven = index % 2 === 0;
 
             return (
               <div 
                 key={item.id}
-                className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16 items-center"
+                className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-center"
               >
-                {/* Image Block Shell featuring Horizontal Paper Roll Effect */}
+                {/* Image Block Container */}
                 <motion.div 
-                  className={`relative w-full aspect-[527/468] rounded-2xl overflow-hidden bg-zinc-50 border border-zinc-100 shadow-[0_12px_40px_rgba(0,0,0,0.04)] lg:col-span-6 ${
+                  className={`relative w-full aspect-[527/468] h-auto min-h-[240px] sm:min-h-[340px] md:min-h-[400px] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-[0_12px_40px_rgba(0,0,0,0.04)] lg:col-span-6 ${
                     isEven ? 'lg:order-1' : 'lg:order-2'
                   }`}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true, margin: "-80px" }}
-                  variants={paperRollHorizontal}
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={containerReveal}
                 >
                   <Image
                     loader={cacheBustLoader}
                     src={item.desktopImg}
                     alt={item.title}
                     fill
-                    sizes="(max-w-1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 hover:scale-102"
+                    sizes="(max-w-640px) 100vw, (max-w-1024px) 80vw, 50vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    priority={index < 2}
+                  />
+
+                  {/* Unfurl Overlay Slide - Set strictly to origin-right to unroll Left -> Right */}
+                  <motion.div 
+                    className="absolute inset-0 bg-white transform-gpu pointer-events-none"
+                    style={{ transformOrigin: 'right center' }}
+                    variants={paperUnfurlOverlay}
                   />
                   
-                  {/* Subtle dynamic overlay shadow running sideways along the moving paper edge */}
-                  <motion.div 
-                    className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-black/[0.01] to-black/[0.03]"
-                    initial={{ opacity: 1 }}
-                    whileInView={{ opacity: 0 }}
-                    transition={{ duration: 1.2, ease: 'easeOut' }}
-                  />
+                  {/* Premium soft glass gradient overlay split */}
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-black/[0.01] to-black/[0.02]" />
                 </motion.div>
 
                 {/* Text Content Block Shell */}
@@ -170,10 +175,10 @@ export default function LuxuryShowcase() {
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-zinc-900 mb-4 sm:mb-6 leading-tight tracking-wide">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-zinc-900 mb-3 sm:mb-6 leading-tight tracking-wide">
                     {item.title}
                   </h2>
-                  <div className="w-12 h-[2px] bg-amber-500 mb-6" />
+                  <div className="w-12 h-[2px] bg-amber-500 mb-4 sm:mb-6" />
                   <p className="text-zinc-600 font-light text-sm sm:text-base leading-relaxed">
                     {item.description}
                   </p>
