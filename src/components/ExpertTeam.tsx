@@ -26,7 +26,7 @@ export default function ExpertTeam() {
 
   return (
     <section id="property-experts" className="section-padding bg-gradient-to-br from-amber-50 via-white to-amber-50 overflow-hidden">
-      <div className="container-custom pt-56">
+      <div className="container-custom ">
         
         {/* Header Section: Slides up from down */}
         <motion.div 

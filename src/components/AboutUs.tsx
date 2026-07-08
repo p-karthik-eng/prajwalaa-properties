@@ -1,12 +1,18 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
   const [yearsCount, setYearsCount] = useState(0);
   const [concreteCount, setConcreteCount] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  // Custom Image Loader to append cache-busting strings seamlessly
+  const cacheBustLoader = ({ src }: { src: string }) => {
+    return `${src}?v=prajwalaa-2026`;
+  };
 
   useEffect(() => {
     // Smooth frame-by-frame count animation handler
@@ -158,25 +164,28 @@ export default function AboutUs() {
         {/* --- CONTENT LAYOUT --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           
-          {/* Left Column: Fixed, Static Premium Light Card (No Animation Loop) */}
+          {/* Left Column: Interactive Brand Identity Showcase & Stats Container */}
           <div 
             className={`lg:col-span-5 flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.01)] border-l-4 border-l-[#d39443] reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '400ms' }}
           >
-            <div className="space-y-6">
-              <h3 className="text-2xl font-serif tracking-wide text-[#d39443]">
-                Built on Absolute Integrity
-              </h3>
-              <p className="text-zinc-700 font-light leading-relaxed">
-                Derived from the essence of illumination and cosmic fire, our company represents an unwavering commitment to brilliance in construction standards. Every structural blueprint we draft balances structural physics with elegant baseline aesthetics.
-              </p>
-              <p className="text-zinc-500 text-sm font-light">
-                From foundation depth calculations to micro-finish details on expansive high-rise elevations, our structural philosophy guarantees investment permanence and customer trust.
-              </p>
+            {/* Logo Wrapper Container */}
+            <div className="w-full flex items-center justify-center py-8">
+              <div className="relative w-full max-w-[280px] aspect-[4/3]">
+                <Image
+                  loader={cacheBustLoader}
+                  src="/logo.png"
+                  alt="Prajwaala Properties Executive Logo"
+                  fill
+                  sizes="(max-w-1024px) 100vw, 33vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
 
             {/* Micro Stats Row inside Left Column with Count Up State hooks */}
-            <div className="grid grid-cols-2 gap-4 mt-12 pt-8 border-t border-zinc-200">
+            <div className="grid grid-cols-2 gap-4 mt-auto pt-8 border-t border-zinc-200">
               <div>
                 <span className="block text-3xl font-bold font-serif text-zinc-900">
                   {yearsCount}+ Yrs

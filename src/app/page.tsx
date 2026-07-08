@@ -1,5 +1,6 @@
 import AboutUs from "@/components/AboutUs";
 import AmenitiesSection from "@/components/AmenitiesSection";
+import ConsultationWidget from "@/components/ConsultationWidget";
 import ExpertTeam from "@/components/ExpertTeam";
 import SpecificationsFAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50">
       <Navbar />
       <HeroSection />
+      <ConsultationWidget />
       <ExpertTeam />
       <AboutUs />
       <VideoSection />

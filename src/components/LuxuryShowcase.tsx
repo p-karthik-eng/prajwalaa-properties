@@ -48,6 +48,20 @@ export default function LuxuryShowcase() {
       description: "Escape the fast-paced cityscape within our sound-insulated mindfulness and yoga pavilion. Bathed in balanced natural morning light and surrounded by subtle design choices, this serene room is dedicated entirely to mental clarity, core alignment, and absolute personal peace.",
       desktopImg: "/yoga.jpg",
       mobileImg: "/sites/default/files/2024-04/USP5_Lodha-Bellevue_390X347.jpg",
+    },
+    {
+      id: 6,
+      title: "Guest Rooms",
+      description: "Host your visitors with hospitality that matches elite hotel hospitality templates. These elegantly finished luxury guest suites feature integrated modular conveniences, deep-palette texturing, and complete acoustic screening to ensure your family and associates enjoy absolute comfort.",
+      desktopImg: "/guest-rooms.avif",
+      mobileImg: "/sites/default/files/2024-04/guest-rooms-thumb.jpg",
+    },
+    {
+      id: 7,
+      title: "Multipurpose Hall",
+      description: "Celebrate the milestone moments of life within a majestic banquet framework. Our expansive multipurpose hall combines high-ceiling clearance architectures, sophisticated acoustic treatment arrays, and dynamic layout capabilities perfect for premier social galas or close family events.",
+      desktopImg: "/multipurpose-hall.jpg",
+      mobileImg: "/sites/default/files/2024-04/multipurpose-hall-thumb.jpg",
     }
   ];
 
@@ -68,18 +82,18 @@ export default function LuxuryShowcase() {
   // Horizontal Premium Paper Roll Unfurl Animation
   const paperRollHorizontal: Variants = {
     hidden: { 
-      clipPath: 'inset(0% 100% 0% 0%)', // Keeps the right side completely rolled shut
+      clipPath: 'inset(0% 100% 0% 0%)', 
       scaleX: 0.85, 
       skewX: 1,
-      transformOrigin: 'left center' // Unrolls from left side out toward the right
+      transformOrigin: 'left center' 
     },
     visible: { 
-      clipPath: 'inset(0% 0% 0% 0%)', // Completely sweeps across to full 100% width
+      clipPath: 'inset(0% 0% 0% 0%)', 
       scaleX: 1,
       skewX: 0,
       transition: { 
         duration: 1.3, 
-        ease: [0.25, 1, 0.5, 1], // Smooth cubic-bezier to simulate heavy unrolling momentum
+        ease: [0.25, 1, 0.5, 1], 
         delay: 0.1 
       } 
     }
