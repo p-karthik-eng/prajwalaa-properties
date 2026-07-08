@@ -94,16 +94,6 @@ export default function Footer() {
           </div>
 
         </div>
-
-        {/* Legal Disclaimer Line */}
-        <hr className="my-10 border-neutral-800" />
-        
-        <div className="flex flex-col lg:flex-row items-start gap-4 text-xs text-neutral-500 bg-neutral-900/40 p-4 rounded-lg border border-neutral-800/60">
-          <ShieldAlert size={16} className="text-amber-600 shrink-0 mt-0.5" />
-          <p className="leading-relaxed">
-            <span className="font-semibold text-neutral-400">Disclaimer Note:</span> This brochure is a conceptual presentation and not a legal offering. The promoter reserves the right to make changes in plans, specifications, and elevation as deemed fit.
-          </p>
-        </div>
       </div>
 
       {/* Deep Footer Bar */}

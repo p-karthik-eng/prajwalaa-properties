@@ -6,7 +6,9 @@ import Footer from "@/components/Footer";
 import GallerySection from "@/components/GallerySection";
 import HeroSection from "@/components/HeroSection";
 import KeyPrinciples from "@/components/KeyPrinciples";
+import LegacySection from "@/components/LegacySection";
 import LocationSection from "@/components/LocationSection";
+import LuxuryShowcase from "@/components/LuxuryShowcase";
 import Navbar from "@/components/Navbar";
 import TestimonialsSection from "@/components/Testimonials";
 import VideoSection from "@/components/VideoSection";
@@ -21,12 +23,14 @@ export default function Home() {
       <AboutUs />
       <VideoSection />
       <GallerySection />
-      <TestimonialsSection />
-      <SpecificationsFAQ />
-      <KeyPrinciples />
-      <WhyChooseUs />
-      <AmenitiesSection />
       <LocationSection />
+     <LuxuryShowcase />
+      <KeyPrinciples />
+      <LegacySection />
+      <WhyChooseUs />
+       <SpecificationsFAQ />
+      <TestimonialsSection />
+     
       <Footer />
       
     </main>

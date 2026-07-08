@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="w-full bg-[#0a0a0a] text-[#ffffff] py-20 px-6 md:px-16 lg:px-24 font-sans border-t border-zinc-900 overflow-hidden">
+    <section className="w-full bg-white text-[#111111] py-20 px-6 md:px-16 lg:px-24 font-sans border-t border-zinc-100 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         
         {/* Animated Section Header */}
@@ -69,16 +69,16 @@ export default function WhyChooseUs() {
           viewport={{ once: true, margin: "-100px" }}
           variants={headerVariants}
         >
-          <span className="text-[#f59e0b] text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
+          <span className="text-amber-600 text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
             The Prajwaala Advantage
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-wide uppercase text-white">
-            Why Choose <span className="font-bold text-[#fbbf24]">Prajwaala Properties?</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-wide uppercase text-zinc-900">
+            Why Choose <span className="font-bold text-amber-600">Prajwaala Properties?</span>
           </h2>
-          <div className="w-12 h-[2px] bg-[#f59e0b] mx-auto mt-4"></div>
+          <div className="w-12 h-[2px] bg-amber-500 mx-auto mt-4"></div>
         </motion.div>
 
-        {/* Animated 3-Column Dark & Yellow Card Grid */}
+        {/* Animated 3-Column Light Card Grid */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"
           initial="hidden"
@@ -92,31 +92,31 @@ export default function WhyChooseUs() {
               variants={cardVariants}
               whileHover={{ 
                 y: -8, 
-                boxShadow: "0 20px 40px rgba(245, 158, 11, 0.05)",
-                borderColor: "rgba(245, 158, 11, 0.5)"
+                boxShadow: "0 20px 40px rgba(217, 119, 6, 0.08)",
+                borderColor: "rgba(217, 119, 6, 0.4)"
               }}
-              className="flex flex-col bg-[#121212] border border-zinc-800/80 rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-colors duration-300 group cursor-pointer relative overflow-hidden"
+              className="flex flex-col bg-zinc-50 border border-zinc-200/80 rounded-2xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-colors duration-300 group cursor-pointer relative overflow-hidden"
             >
               {/* Decorative Yellow Top Accent Line */}
-              <div className="absolute top-0 left-0 w-full h-[3px] bg-zinc-800 group-hover:bg-[#f59e0b] transition-colors duration-300"></div>
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-zinc-200 group-hover:bg-amber-500 transition-colors duration-300"></div>
 
               {/* Card Header with Yellow index indicator */}
               <div className="flex items-baseline space-x-3 mb-4">
-                <span className="font-mono text-sm font-bold text-[#f59e0b] bg-[#f59e0b]/10 px-2.5 py-1 rounded-md">
+                <span className="font-mono text-sm font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">
                   {item.id}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-zinc-100 tracking-wide group-hover:text-[#fbbf24] transition-colors duration-200">
+                <h3 className="text-xl font-serif font-bold text-zinc-800 tracking-wide group-hover:text-amber-600 transition-colors duration-200">
                   {item.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <p className="text-zinc-400 text-sm md:text-[15px] font-light leading-relaxed flex-grow">
+              <p className="text-zinc-600 text-sm md:text-[15px] font-light leading-relaxed flex-grow">
                 {item.description}
               </p>
 
               {/* Yellow Arrow Link Indicator */}
-              <div className="mt-6 flex items-center text-[#fbbf24] text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-4px] group-hover:translate-x-0">
+              <div className="mt-6 flex items-center text-amber-600 text-xs font-semibold uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-4px] group-hover:translate-x-0">
                 <span>Learn More</span>
                 <svg className="w-3 h-3 ml-1.5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

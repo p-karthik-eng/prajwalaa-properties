@@ -79,11 +79,11 @@ export default function GallerySection() {
             {duplicatedItems.map((item, index) => (
               <motion.div 
                 key={`${item.id}-${index}`} 
-                className="group flex flex-col bg-white border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.04)] overflow-hidden rounded-sm shrink-0 w-[280px] sm:w-[350px] md:w-[400px] cursor-pointer"
+                className="group flex flex-col bg-white border border-gray-200 shadow-[0_4px_25px_rgba(0,0,0,0.03)] overflow-hidden rounded-xl shrink-0 w-[320px] sm:w-[440px] md:w-[520px] cursor-pointer"
                 // Interactive micro-interaction for single cards on hover
                 whileHover={{ 
-                  y: -5,
-                  boxShadow: "0 12px 30px rgba(0, 0, 0, 0.08)",
+                  y: -8,
+                  boxShadow: "0 20px 40px rgba(0, 0, 0, 0.08)",
                   transition: { duration: 0.3, ease: "easeOut" }
                 }}
               >

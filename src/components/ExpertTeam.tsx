@@ -24,18 +24,9 @@ export default function ExpertTeam() {
     }
   };
 
-  const rightSideVariants: Variants = {
-    hidden: { opacity: 0, x: 60 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.7, ease: 'easeOut' }
-    }
-  };
-
   return (
     <section id="property-experts" className="section-padding bg-gradient-to-br from-amber-50 via-white to-amber-50 overflow-hidden">
-      <div className="container-custom pt-50">
+      <div className="container-custom pt-56">
         
         {/* Header Section: Slides up from down */}
         <motion.div 
@@ -49,7 +40,7 @@ export default function ExpertTeam() {
             Meet Our <span className="gradient-text">Expert Property Team</span>
           </h2>
           <p className="font-body text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Led by Mohan Rayapudi and R Jayarekha — certified wealth and asset specialists focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
+            Led by Bosu Babu — certified wealth and asset specialist focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
           </p>
         </motion.div>
 
@@ -71,10 +62,9 @@ export default function ExpertTeam() {
               >
                 <Image
                   alt="Mohan Rayapudi, Principal Property Strategist"
-                  src="https://picsum.photos/1080/1616"
+                  src="/producer.png"
                   fill
                   priority
-                  unoptimized
                   sizes="(max-w-1024px) 100vw, 50vw"
                   className="object-cover object-[center_22%]"
                 />
@@ -99,13 +89,13 @@ export default function ExpertTeam() {
                   Meet The Man Behind The Brand
                 </p>
                 <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1">
-                  Mohan Rayapudi
+                  Bosu Babu
                 </h3>
                 <p className="font-accent text-base sm:text-lg font-semibold mb-1" style={{ color: '#513500' }}>
                   CPM® (Certified Property Manager)
                 </p>
                 <p className="font-body text-sm sm:text-base font-medium text-gray-700 mb-4">
-                  Asset Maximizer &amp; Portfolio Designer
+                  Director &amp; Producer
                 </p>
                 <ul className="font-body text-sm text-gray-600 space-y-2 mb-6" aria-label="Credentials and achievements">
                   <li className="leading-snug">🏢 CPM®, Institute of Real Estate Management</li>
@@ -118,79 +108,6 @@ export default function ExpertTeam() {
                 <Link 
                   className="inline-flex items-center gap-2 font-accent font-semibold text-amber-700 hover:text-amber-900 transition-colors group" 
                   href="/experts/mohan-rayapudi"
-                >
-                  <span>Read More</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </Link>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Legal & Compliance Specialist - R Jayarekha */}
-          <div id="jayarekha" className="max-w-6xl mx-auto scroll-mt-28">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl bg-white shadow-xl border border-amber-100/80 overflow-hidden">
-              
-              {/* Visually on the right on desktop */}
-              <motion.div 
-                className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px] lg:order-2" 
-                style={{ aspectRatio: '1080 / 1616' }}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={rightSideVariants}
-              >
-                <Image
-                  alt="R Jayarekha, Compliance &amp; Acquisitions Expert"
-                  src="https://picsum.photos/1080/1616"
-                  fill
-                  loading="lazy"
-                  unoptimized
-                  sizes="(max-w-1024px) 100vw, 50vw"
-                  className="object-cover object-[center_22%]"
-                />
-              </motion.div>
-
-              {/* Visually on the left on desktop - Delayed stagger */}
-              <motion.div 
-                className="p-6 sm:p-8 lg:p-10 text-left lg:order-1"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-100px" }}
-                variants={{
-                  hidden: { opacity: 0, x: -60 },
-                  visible: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.7, ease: 'easeOut', delay: 0.5 }
-                  }
-                }}
-              >
-                <p className="font-accent text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] text-amber-700/90 uppercase mb-3">
-                  Expert Specialist
-                </p>
-                <h3 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1">
-                  R Jayarekha
-                </h3>
-                <p className="font-accent text-base sm:text-lg font-semibold mb-1" style={{ color: '#513500' }}>
-                  LL.M. (Real Estate &amp; Land Tenure Law)
-                </p>
-                <p className="font-body text-sm sm:text-base font-medium text-gray-700 mb-4">
-                  Commercial Leasing · Zoning &amp; Risk Mitigation Specialist
-                </p>
-                <ul className="font-body text-sm text-gray-600 space-y-2 mb-6" aria-label="Credentials and achievements">
-                  <li className="leading-snug">⚖️ Master of Laws (LL.M.), Property &amp; Conveyancing Law</li>
-                  <li className="leading-snug">📘 Author: “The Landlord’s Blueprint: Mitigating Statutory Risk”</li>
-                  <li className="leading-snug">📋 Certified Regulatory Risk Auditor &amp; Arbitrator</li>
-                </ul>
-                <blockquote className="font-body text-sm sm:text-base text-gray-700 leading-relaxed border-l-4 border-amber-500 pl-4 mb-8 italic">
-                  “Sustainable legal frameworks and tenant retention rely on absolute transparency, proactive structural audits, and systems that mitigate friction before it impacts capital.”
-                </blockquote>
-                <Link 
-                  className="inline-flex items-center gap-2 font-accent font-semibold text-amber-700 hover:text-amber-900 transition-colors group" 
-                  href="/experts/r-jayarekha"
                 >
                   <span>Read More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
