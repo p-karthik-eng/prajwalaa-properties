@@ -1,4 +1,5 @@
 import AboutUs from "@/components/AboutUs";
+import AmenitiesSection from "@/components/AmenitiesSection";
 import ExpertTeam from "@/components/ExpertTeam";
 import SpecificationsFAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
       <SpecificationsFAQ />
       <KeyPrinciples />
       <WhyChooseUs />
+      <AmenitiesSection />
       <LocationSection />
       <Footer />
       
