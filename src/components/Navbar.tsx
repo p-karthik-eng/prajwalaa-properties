@@ -3,21 +3,23 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { ChevronDown, MapPin, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   // Exact navigation item map from the provided screenshot
   const navLinks = [
     { name: "Home", href: "/", hasSub: false },
-    { name: "About", href: "#about", hasSub: false },
-    { name: "Principles", href: "#principles", hasSub: false },
-    { name: "FAQs", href: "#faq", hasSub: false },
-    { name: "Blogs", href: "#blogs", hasSub: false },
-    { name: "Gallery", href: "#gallery", hasSub: false },
-    { name: "Pricing", href: "#pricing", hasSub: false },
-    { name: "Contact Us", href: "#contact", hasSub: false },
+    { name: "About", href: "/about", hasSub: false },
+    { name: "Principles", href: "/principles", hasSub: false },
+    { name: "FAQs", href: "/faq", hasSub: false },
+    { name: "Blogs", href: "/blogs", hasSub: false },
+    { name: "Gallery", href: "/gallery", hasSub: false },
+    { name: "Pricing", href: "/pricing", hasSub: false },
+    { name: "Contact Us", href: "/contact", hasSub: false },
   ];
 
   return (
@@ -92,16 +94,20 @@ export default function Navbar() {
 
         {/* Center/Right Dynamic Desktop Horizontal Links */}
         <nav className="hidden xl:flex items-center space-x-5 lg:space-x-7 text-[14px] font-medium text-neutral-700">
-          {navLinks.map((link, idx) => (
-            <Link 
-              key={idx} 
-              href={link.href}
-              className="hover:text-[#a64f17] transition-colors flex items-center space-x-0.5 py-1"
-            >
-              <span className="font-normal">{link.name}</span>
-              {link.hasSub && <ChevronDown size={14} className="text-neutral-400 stroke-[2.5]" />}
-            </Link>
-          ))}
+          {navLinks.map((link, idx) => {
+            const isActive = pathname === link.href;
+            return (
+              <Link 
+                key={idx} 
+                href={link.href}
+                className={`relative group transition-colors flex items-center space-x-0.5 py-1.5 ${isActive ? 'text-[#a64f17]' : 'hover:text-[#a64f17]'}`}
+              >
+                <span className="font-normal">{link.name}</span>
+                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#d39443] transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                {link.hasSub && <ChevronDown size={14} className="text-neutral-400 stroke-[2.5]" />}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Mobile View Toggle Trigger Button */}
@@ -118,17 +124,20 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="xl:hidden w-full bg-white border-b border-neutral-200 shadow-xl absolute top-full left-0 py-3 px-6 animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-3 font-medium text-neutral-700">
-            {navLinks.map((link, idx) => (
-              <Link 
-                key={idx} 
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="hover:text-[#a64f17] transition-colors flex items-center justify-between border-b border-neutral-50 pb-2 text-[13px]"
-              >
-                <span>{link.name}</span>
-                {link.hasSub && <ChevronDown size={14} className="text-neutral-400" />}
-              </Link>
-            ))}
+            {navLinks.map((link, idx) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link 
+                  key={idx} 
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`transition-colors flex items-center justify-between border-b border-neutral-50 pb-2 text-[13px] ${isActive ? 'text-[#a64f17] font-semibold' : 'hover:text-[#a64f17]'}`}
+                >
+                  <span>{link.name}</span>
+                  {link.hasSub && <ChevronDown size={14} className="text-neutral-400" />}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       )}
