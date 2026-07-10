@@ -78,7 +78,6 @@ export default function LuxuryShowcase() {
     }
   };
 
-  // Safe container scale reveal
   const containerReveal: Variants = {
     hidden: { opacity: 0, scale: 0.98 },
     visible: { 
@@ -88,7 +87,6 @@ export default function LuxuryShowcase() {
     }
   };
 
-  // THE SAFEPAPER ROLL: Shrinks down to scaleX: 0 towards the right side
   const paperUnfurlOverlay: Variants = {
     hidden: { scaleX: 1 },
     visible: { 
@@ -102,8 +100,88 @@ export default function LuxuryShowcase() {
   };
 
   return (
-    <section className="w-full bg-white text-[#111111] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full bg-gradient-to-b from-amber-50/40 via-[#fffdf9] to-white text-[#111111] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans overflow-hidden border-t border-amber-200/50">
+      
+      {/* --- EXTRA INTENSIFIED FLOATING YELLOW BACKGROUND CARDS (9 SHAPES) --- */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-90">
+        
+        {/* Shape 1 - Top Left */}
+        <motion.div 
+          className="absolute w-52 h-52 rounded-2xl border-[3px] border-amber-400/40 bg-amber-400/[0.07] shadow-[inset_0_4px_20px_rgba(251,191,36,0.05)]"
+          style={{ top: '3%', left: '2%' }}
+          animate={{ y: [0, -20, 0], rotate: [0, 8, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Shape 2 - Upper Center Right */}
+        <motion.div 
+          className="absolute w-72 h-44 rounded-3xl border-[3px] border-amber-500/35 bg-amber-400/[0.08] shadow-[0_15px_35px_rgba(251,191,36,0.05)]"
+          style={{ top: '15%', right: '4%' }}
+          animate={{ y: [0, 25, 0], rotate: [-10, -5, -10] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+        />
+
+        {/* Shape 3 - Mid Left Axis */}
+        <motion.div 
+          className="absolute w-60 h-60 rounded-[2.5rem] border-[3px] border-amber-400/30 bg-amber-300/[0.06] rotate-45"
+          style={{ top: '38%', left: '6%' }}
+          animate={{ y: [0, -30, 0], x: [0, 15, 0] }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        />
+
+        {/* Shape 4 - Lower Center Left (NEW ADDTIONAL ACCENT) */}
+        <motion.div 
+          className="absolute w-48 h-64 rounded-3xl border-[2.5px] border-amber-400/35 bg-amber-400/[0.05]"
+          style={{ top: '58%', left: '25%' }}
+          animate={{ scale: [1, 1.05, 1], y: [0, 15, 0] }}
+          transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+        />
+
+        {/* Shape 5 - Mid Center Right (NEW ADDTIONAL ACCENT) */}
+        <motion.div 
+          className="absolute w-64 h-64 rounded-[2rem] border-[3px] border-amber-300/25 bg-amber-400/[0.06] rotate-12"
+          style={{ top: '48%', right: '12%' }}
+          animate={{ rotate: [12, 18, 12], y: [-10, 20, -10] }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+        />
+
+        {/* Shape 6 - Lower Right Axis */}
+        <motion.div 
+          className="absolute w-80 h-48 rounded-2xl border-[3px] border-amber-500/30 bg-amber-400/[0.07]"
+          style={{ bottom: '18%', right: '3%' }}
+          animate={{ y: [-15, 15, -15], rotate: [0, 4, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        />
+
+        {/* Shape 7 - Bottom Left Corner */}
+        <motion.div 
+          className="absolute w-48 h-48 rounded-xl border-[2.5px] border-amber-400/40 bg-amber-300/[0.08] -rotate-12"
+          style={{ bottom: '2%', left: '3%' }}
+          animate={{ x: [0, 15, 0], y: [0, 15, 0] }}
+          transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        />
+
+        {/* Shape 8 - Top Mid-Right Anchor (NEW ADDITIONAL ACCENT) */}
+        <motion.div 
+          className="absolute w-40 h-40 rounded-2xl border-[3px] border-amber-400/40 bg-amber-400/[0.08] rotate-45"
+          style={{ top: '2%', right: '32%' }}
+          animate={{ scale: [1, 1.08, 1], x: [0, -10, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Shape 9 - Extreme Bottom Center-Right Grid (NEW ADDITIONAL ACCENT) */}
+        <motion.div 
+          className="absolute w-80 h-36 rounded-[2rem] border-[2.5px] border-amber-400/20 bg-amber-300/[0.04]"
+          style={{ bottom: '4%', right: '40%' }}
+          animate={{ y: [10, -10, 10] }}
+          transition={{ duration: 9.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+        />
+      </div>
+
+      {/* Intensified structural linear background grid overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#d3944307_1px,transparent_1px),linear-gradient(to_bottom,#d3944307_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
         {/* --- BRAND INTRODUCTION HEADER --- */}
         <motion.div 
@@ -113,12 +191,18 @@ export default function LuxuryShowcase() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
         >
-          <span className="text-amber-500 font-semibold tracking-widest text-xs uppercase mb-3">Prajwalaa Properties</span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-6 tracking-wide">
+          <div className="inline-flex items-center space-x-1.5 bg-[#d39443]/20 text-[#be7c2a] px-4 py-1.5 rounded-full mb-4 font-semibold shadow-sm backdrop-blur-md">
+            <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <span className="text-xs tracking-wide uppercase">Elite Experiences</span>
+          </div>
+
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-4 tracking-wide">
             World-Class Amenities
           </h1>
           <div className="w-16 h-[2px] bg-amber-500 mb-6" />
-          <p className="text-zinc-600 font-light leading-relaxed text-sm sm:text-base md:text-lg">
+          <p className="text-zinc-600 font-normal leading-relaxed text-sm sm:text-base md:text-lg">
             Experience an elite lifestyle infrastructure built to bring absolute luxury, health, 
             <br className="hidden md:block" /> and balanced social wellness straight to your doorstep.
           </p>
@@ -136,7 +220,7 @@ export default function LuxuryShowcase() {
               >
                 {/* Image Block Container */}
                 <motion.div 
-                  className={`relative w-full aspect-[527/468] h-auto min-h-[240px] sm:min-h-[340px] md:min-h-[400px] rounded-2xl overflow-hidden bg-zinc-100 border border-zinc-200 shadow-[0_12px_40px_rgba(0,0,0,0.04)] lg:col-span-6 ${
+                  className={`relative w-full aspect-[527/468] h-auto min-h-[240px] sm:min-h-[340px] md:min-h-[400px] rounded-2xl overflow-hidden bg-white/80 backdrop-blur-md border border-amber-200/60 shadow-[0_12px_40px_rgba(211,148,67,0.06)] lg:col-span-6 ${
                     isEven ? 'lg:order-1' : 'lg:order-2'
                   }`}
                   initial="hidden"
@@ -154,14 +238,12 @@ export default function LuxuryShowcase() {
                     priority={index < 2}
                   />
 
-                  {/* Unfurl Overlay Slide - Set strictly to origin-right to unroll Left -> Right */}
                   <motion.div 
-                    className="absolute inset-0 bg-white transform-gpu pointer-events-none"
+                    className="absolute inset-0 bg-[#fffdf9] transform-gpu pointer-events-none"
                     style={{ transformOrigin: 'right center' }}
                     variants={paperUnfurlOverlay}
                   />
                   
-                  {/* Premium soft glass gradient overlay split */}
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-black/[0.01] to-black/[0.02]" />
                 </motion.div>
 
@@ -175,7 +257,7 @@ export default function LuxuryShowcase() {
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-zinc-900 mb-3 sm:mb-6 leading-tight tracking-wide">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-zinc-900 mb-3 sm:mb-6 leading-tight tracking-wide hover:text-[#d39443] transition-colors duration-300">
                     {item.title}
                   </h2>
                   <div className="w-12 h-[2px] bg-amber-500 mb-4 sm:mb-6" />

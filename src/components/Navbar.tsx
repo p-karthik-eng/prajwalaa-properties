@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Exact navigation item map from the provided screenshot
+  // Navigation map with "Pricing" removed
   const navLinks = [
     { name: "Home", href: "/", hasSub: false },
     { name: "About", href: "/about", hasSub: false },
@@ -18,7 +18,6 @@ export default function Navbar() {
     { name: "FAQs", href: "/faq", hasSub: false },
     { name: "Blogs", href: "/blogs", hasSub: false },
     { name: "Gallery", href: "/gallery", hasSub: false },
-    { name: "Pricing", href: "/pricing", hasSub: false },
     { name: "Contact Us", href: "/contact", hasSub: false },
   ];
 
@@ -70,7 +69,7 @@ export default function Navbar() {
           <div className="relative h-12 w-12 flex-shrink-0">
             <Image 
               src="/logo.png" 
-              alt="Mohan Dental Clinic Logo" 
+              alt="Prajwalaa Ankura Properties Logo" 
               fill
               className="object-contain"
               priority

@@ -169,22 +169,31 @@ export default function AboutUs() {
             className={`lg:col-span-5 flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.01)] border-l-4 border-l-[#d39443] reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '400ms' }}
           >
-            {/* Logo Wrapper Container */}
-            <div className="w-full flex items-center justify-center py-8">
-              <div className="relative w-full max-w-[280px] aspect-[4/3]">
+            {/* Logo/Identity Wrapper Container - Increased size & added text details */}
+            <div className="w-full flex flex-col items-center justify-center py-4">
+              <div className="relative w-full max-w-[360px] aspect-[4/3] mb-4">
                 <Image
                   loader={cacheBustLoader}
-                  src="/logo.png"
-                  alt="Prajwaala Properties Executive Logo"
+                  src="/producer.png"
+                  alt="Bosu Babu - Prajwaala Properties"
                   fill
-                  sizes="(max-w-1024px) 100vw, 33vw"
+                  sizes="(max-w-1024px) 100vw, 40vw"
                   className="object-contain"
                   priority
                 />
               </div>
+              {/* Added Person's Identity Label */}
+              <div className="text-center">
+                <h3 className="font-serif text-2xl font-bold text-zinc-900 tracking-wide">
+                  Bosu Babu
+                </h3>
+                <p className="text-xs uppercase tracking-[0.15em] text-[#d39443] font-medium mt-1">
+                  Founder &amp; Managing Director
+                </p>
+              </div>
             </div>
 
-            {/* Micro Stats Row inside Left Column with Count Up State hooks */}
+            {/* Micro Stats Row inside Left Column */}
             <div className="grid grid-cols-2 gap-4 mt-auto pt-8 border-t border-zinc-200">
               <div>
                 <span className="block text-3xl font-bold font-serif text-zinc-900">
@@ -256,7 +265,7 @@ export default function AboutUs() {
 
           </div>
 
-         </div>
+        </div>
       </div>
     </section>
   );

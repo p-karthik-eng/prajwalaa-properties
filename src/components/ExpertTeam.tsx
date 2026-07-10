@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
 export default function ExpertTeam() {
-  // Explicitly typing variants as 'Variants' to keep TypeScript completely happy
   const headerVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { 
@@ -19,6 +18,7 @@ export default function ExpertTeam() {
     hidden: { opacity: 0, x: -60 },
     visible: { 
       opacity: 1, 
+      y: 0, // Swapped to Y or X depending on preference, kept your X-axis logic
       x: 0,
       transition: { duration: 0.7, ease: 'easeOut' }
     }
@@ -28,7 +28,7 @@ export default function ExpertTeam() {
     <section id="property-experts" className="py-16 sm:py-20 md:py-24 px-4 sm:px-8 md:px-12 lg:px-24 bg-gradient-to-br from-amber-50 via-white to-amber-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
-        {/* Header Section: Slides up from down */}
+        {/* Header Section */}
         <motion.div 
           className="text-center mb-10 sm:mb-14"
           initial="hidden"
@@ -48,12 +48,13 @@ export default function ExpertTeam() {
         <div className="flex flex-col gap-14 sm:gap-16">
           
           {/* Portfolio Director - Mohan Rayapudi */}
-          <div id="mohan-rayapudi" className="max-w-6xl mx-auto scroll-mt-28">
+          <div id="mohan-rayapudi" className="max-w-6xl mx-auto scroll-mt-28 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center rounded-3xl bg-white shadow-xl border border-amber-100/80 overflow-hidden">
               
               {/* Left Side Content (Image) */}
+              {/* REMOVED hardcoded min-h values that clash with portrait aspect ratio */}
               <motion.div 
-                className="relative w-full min-h-[220px] bg-zinc-100 sm:min-h-[320px] lg:min-h-[360px]" 
+                className="relative w-full h-full bg-white p-4 lg:p-6 flex items-center justify-center" 
                 style={{ aspectRatio: '1080 / 1616' }}
                 initial="hidden"
                 whileInView="visible"
@@ -66,11 +67,12 @@ export default function ExpertTeam() {
                   fill
                   priority
                   sizes="(max-w-1024px) 100vw, 50vw"
-                  className="object-cover object-[center_22%]"
+                  /* CHANGED FROM object-cover TO object-contain TO PREVENT CROPPING */
+                  className="object-contain" 
                 />
               </motion.div>
 
-              {/* Right Side Content (Text & Info) - Delayed stagger */}
+              {/* Right Side Content (Text & Info) */}
               <motion.div 
                 className="p-6 sm:p-8 lg:p-10 text-left"
                 initial="hidden"
