@@ -71,7 +71,7 @@ export default function LegacySection() {
             {/* Section Heading */}
             <motion.h2 
               variants={itemVariants}
-              className="text-3xl sm:text-4xl font-serif font-bold tracking-wide mb-6 leading-tight text-zinc-900"
+              className="text-3xl sm:text-4xl font-serif font-bold tracking-wide mb-6 leading-tight text-black"
             >
               Continuing the Legacy
             </motion.h2>
@@ -85,7 +85,7 @@ export default function LegacySection() {
             {/* Content Body */}
             <motion.p 
               variants={itemVariants}
-              className="text-zinc-900 font-light text-base sm:text-lg leading-relaxed"
+              className="text-black font-light text-base sm:text-lg leading-relaxed"
             >
               As we celebrate 20+ years of undefeated success, we remain dedicated to our core values of integrity, innovation, and customer satisfaction. Join us in shaping the future of real estate and experience the unmatched excellence of Prajwaala Properties.
             </motion.p>

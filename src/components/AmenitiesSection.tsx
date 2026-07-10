@@ -97,7 +97,7 @@ export default function AmenitiesSection() {
                 </div>
 
                 {/* Text Label */}
-                <p className="font-serif text-[14px] font-medium text-neutral-800 leading-snug tracking-wide max-w-[140px] whitespace-normal relative z-20">
+                <p className="font-serif text-[14px] font-medium text-black leading-snug tracking-wide max-w-[140px] whitespace-normal relative z-20">
                   {item.title}
                 </p>
               </div>

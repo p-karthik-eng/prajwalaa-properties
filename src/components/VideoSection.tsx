@@ -55,7 +55,7 @@ export default function VideoSection() {
           </motion.div>
           
           <motion.p 
-            className="text-gray-600 text-sm max-w-xs font-light leading-relaxed"
+            className="text-black text-sm max-w-xs font-light leading-relaxed"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}

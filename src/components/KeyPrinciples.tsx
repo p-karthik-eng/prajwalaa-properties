@@ -140,7 +140,7 @@ export default function KeyPrinciples() {
           </h2>
           
           {/* Subtitle */}
-          <p className="text-gray-600 text-sm md:text-base mt-4 font-normal leading-relaxed max-w-2xl">
+          <p className="text-black text-sm md:text-base mt-4 font-normal leading-relaxed max-w-2xl">
             The structural foundational ethics guiding every blueprint, deployment strategy, and customer interaction.
           </p>
         </motion.div>
@@ -187,7 +187,7 @@ export default function KeyPrinciples() {
                   }}
                 >
                   {/* Top Corner Structural Indicator */}
-                  <span className="absolute right-6 top-5 font-serif text-3xl font-bold text-gray-400/40 group-hover:text-[#d39443]/40 transition-colors duration-300">
+                  <span className="absolute right-6 top-5 font-serif text-3xl font-bold text-black/40 group-hover:text-[#d39443]/40 transition-colors duration-300">
                     {item.id}
                   </span>
 
@@ -198,7 +198,7 @@ export default function KeyPrinciples() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-600 text-sm font-light leading-relaxed mb-6">
+                    <p className="text-black text-sm font-light leading-relaxed mb-6">
                       {item.description}
                     </p>
                   </div>
@@ -206,7 +206,7 @@ export default function KeyPrinciples() {
                   {/* Icon List Layout Accents */}
                   <ul className="space-y-2.5 pt-4 border-t border-amber-200/40 mt-auto">
                     {item.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start space-x-2 text-xs md:text-sm text-gray-700">
+                      <li key={fIdx} className="flex items-start space-x-2 text-xs md:text-sm text-black">
                         <svg className="w-4 h-4 text-[#d39443] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>

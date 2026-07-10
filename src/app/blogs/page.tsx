@@ -74,7 +74,7 @@ Investing in a home is a lifetime commitment. That's why we build structures mea
   ];
 
   return (
-    <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans text-neutral-900">
+    <section className="w-full py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans text-black">
       <div className="max-w-7xl mx-auto">
         
         {/* --- HEADER --- */}
@@ -82,11 +82,11 @@ Investing in a home is a lifetime commitment. That's why we build structures mea
           <span className="text-amber-600 font-semibold tracking-widest text-xs uppercase mb-3">
             Prajwaala Insights
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-neutral-900 mb-6 tracking-wide uppercase">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-black mb-6 tracking-wide uppercase">
             Blogs & Articles
           </h1>
           <div className="w-16 h-[2px] bg-amber-500 mb-6" />
-          <p className="text-neutral-500 font-light leading-relaxed text-sm sm:text-base md:text-lg">
+          <p className="text-black font-light leading-relaxed text-sm sm:text-base md:text-lg">
             Stay updated with modern architectural trends, construction secrets, Hyderabad real estate insights, and lifestyle updates.
           </p>
         </div>
@@ -111,12 +111,12 @@ Investing in a home is a lifetime commitment. That's why we build structures mea
             <span className="inline-block bg-amber-100 text-amber-800 text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full mb-4">
               {selectedPost.category}
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-neutral-900 leading-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-black leading-tight mb-6">
               {selectedPost.title}
             </h2>
 
             {/* Metadata */}
-            <div className="flex flex-wrap items-center gap-6 text-xs text-neutral-400 mb-8 border-b border-neutral-100 pb-6">
+            <div className="flex flex-wrap items-center gap-6 text-xs text-black mb-8 border-b border-neutral-100 pb-6">
               <div className="flex items-center space-x-1.5">
                 <Calendar size={14} className="text-amber-500" />
                 <span>{selectedPost.date}</span>
@@ -139,7 +139,7 @@ Investing in a home is a lifetime commitment. That's why we build structures mea
             </div>
 
             {/* Content Body */}
-            <div className="prose prose-stone max-w-none text-neutral-600 font-light leading-relaxed text-base sm:text-lg whitespace-pre-line space-y-6">
+            <div className="prose prose-stone max-w-none text-black font-light leading-relaxed text-base sm:text-lg whitespace-pre-line space-y-6">
               {selectedPost.content}
             </div>
 
@@ -183,18 +183,18 @@ Investing in a home is a lifetime commitment. That's why we build structures mea
                 <div className="p-6 sm:p-8 flex flex-col justify-between flex-1">
                   <div>
                     {/* Meta info */}
-                    <div className="flex items-center space-x-4 text-xs text-neutral-400 mb-3">
+                    <div className="flex items-center space-x-4 text-xs text-black mb-3">
                       <div className="flex items-center space-x-1">
                         <Calendar size={12} className="text-amber-500/80" />
                         <span>{post.date}</span>
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-neutral-900 mb-4 line-clamp-2 leading-snug hover:text-amber-600 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-serif font-bold text-black mb-4 line-clamp-2 leading-snug hover:text-amber-600 transition-colors">
                       {post.title}
                     </h3>
 
-                    <p className="text-neutral-500 font-light text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
+                    <p className="text-black font-light text-xs sm:text-sm leading-relaxed mb-6 line-clamp-3">
                       {post.excerpt}
                     </p>
                   </div>

@@ -198,11 +198,11 @@ export default function LuxuryShowcase() {
             <span className="text-xs tracking-wide uppercase">Elite Experiences</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-zinc-900 mb-4 tracking-wide">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-black mb-4 tracking-wide">
             World-Class Amenities
           </h1>
           <div className="w-16 h-[2px] bg-amber-500 mb-6" />
-          <p className="text-zinc-600 font-normal leading-relaxed text-sm sm:text-base md:text-lg">
+          <p className="text-black font-normal leading-relaxed text-sm sm:text-base md:text-lg">
             Experience an elite lifestyle infrastructure built to bring absolute luxury, health, 
             <br className="hidden md:block" /> and balanced social wellness straight to your doorstep.
           </p>
@@ -257,11 +257,11 @@ export default function LuxuryShowcase() {
                   viewport={{ once: true, margin: "-100px" }}
                   variants={fadeInUp}
                 >
-                  <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-zinc-900 mb-3 sm:mb-6 leading-tight tracking-wide hover:text-[#d39443] transition-colors duration-300">
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-serif font-bold text-black mb-3 sm:mb-6 leading-tight tracking-wide hover:text-[#d39443] transition-colors duration-300">
                     {item.title}
                   </h2>
                   <div className="w-12 h-[2px] bg-amber-500 mb-4 sm:mb-6" />
-                  <p className="text-zinc-600 font-light text-sm sm:text-base leading-relaxed">
+                  <p className="text-black font-light text-sm sm:text-base leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>

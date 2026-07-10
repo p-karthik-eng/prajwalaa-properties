@@ -139,7 +139,7 @@ export default function FAQSection() {
                 >
                   <span>{item.question}</span>
                   <svg 
-                    className={`w-5 h-5 text-gray-400 flex-shrink-0 ml-4 transition-transform duration-300 ${openId === item.id ? 'rotate-180 text-[#d39443]' : ''}`} 
+                    className={`w-5 h-5 text-black flex-shrink-0 ml-4 transition-transform duration-300 ${openId === item.id ? 'rotate-180 text-[#d39443]' : ''}`} 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -159,7 +159,7 @@ export default function FAQSection() {
                       className="border-t border-gray-100 font-sans overflow-hidden"
                     >
                       <div className="py-4 px-6">
-                        <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
+                        <p className="text-sm md:text-[15px] text-black font-light leading-relaxed">
                           {item.answer}
                         </p>
                       </div>
@@ -187,7 +187,7 @@ export default function FAQSection() {
                 >
                   <span>{item.question}</span>
                   <svg 
-                    className={`w-5 h-5 text-gray-400 flex-shrink-0 ml-4 transition-transform duration-300 ${openId === item.id ? 'rotate-180 text-[#d39443]' : ''}`} 
+                    className={`w-5 h-5 text-black flex-shrink-0 ml-4 transition-transform duration-300 ${openId === item.id ? 'rotate-180 text-[#d39443]' : ''}`} 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -207,7 +207,7 @@ export default function FAQSection() {
                       className="border-t border-gray-100 font-sans overflow-hidden"
                     >
                       <div className="py-4 px-6">
-                        <p className="text-sm md:text-[15px] text-gray-600 font-light leading-relaxed">
+                        <p className="text-sm md:text-[15px] text-black font-light leading-relaxed">
                           {item.answer}
                         </p>
                       </div>

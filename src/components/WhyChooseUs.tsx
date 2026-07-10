@@ -72,7 +72,7 @@ export default function WhyChooseUs() {
           <span className="text-amber-600 text-xs uppercase tracking-[0.25em] font-semibold block mb-2">
             The Prajwaala Advantage
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-wide uppercase text-zinc-900">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-light tracking-wide uppercase text-black">
             Why Choose <span className="font-bold text-amber-600">Prajwaala Properties?</span>
           </h2>
           <div className="w-12 h-[2px] bg-amber-500 mx-auto mt-4"></div>
@@ -105,13 +105,13 @@ export default function WhyChooseUs() {
                 <span className="font-mono text-sm font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">
                   {item.id}
                 </span>
-                <h3 className="text-xl font-serif font-bold text-zinc-800 tracking-wide group-hover:text-amber-600 transition-colors duration-200">
+                <h3 className="text-xl font-serif font-bold text-black tracking-wide group-hover:text-amber-600 transition-colors duration-200">
                   {item.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <p className="text-zinc-600 text-sm md:text-[15px] font-light leading-relaxed flex-grow">
+              <p className="text-black text-sm md:text-[15px] font-light leading-relaxed flex-grow">
                 {item.description}
               </p>
 

@@ -36,10 +36,10 @@ export default function ExpertTeam() {
           viewport={{ once: true, margin: "-100px" }}
           variants={headerVariants}
         >
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-black mb-4 sm:mb-6 leading-tight">
             Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500">Expert Property Team</span>
           </h2>
-          <p className="font-sans text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-sans text-base sm:text-lg text-black max-w-2xl mx-auto leading-relaxed">
             Led by Bosu Babu — certified wealth and asset specialist focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
           </p>
         </motion.div>
@@ -90,21 +90,21 @@ export default function ExpertTeam() {
                 <p className="font-sans text-[10px] sm:text-xs tracking-[0.25em] sm:tracking-[0.35em] text-amber-700/90 uppercase mb-3">
                   Meet The Man Behind The Brand
                 </p>
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-1">
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-1">
                   Bosu Babu
                 </h3>
                 <p className="font-sans text-base sm:text-lg font-semibold mb-1" style={{ color: '#513500' }}>
                   CPM® (Certified Property Manager)
                 </p>
-                <p className="font-sans text-sm sm:text-base font-medium text-gray-700 mb-4">
+                <p className="font-sans text-sm sm:text-base font-medium text-black mb-4">
                   Director &amp; Producer
                 </p>
-                <ul className="font-sans text-sm text-gray-600 space-y-2 mb-6" aria-label="Credentials and achievements">
+                <ul className="font-sans text-sm text-black space-y-2 mb-6" aria-label="Credentials and achievements">
                   <li className="leading-snug">🏢 CPM®, Institute of Real Estate Management</li>
                   <li className="leading-snug">🏅 RICS Chartered Asset Appraiser, UK &amp; USA</li>
                   <li className="leading-snug">🥇 Best Yield Optimization Award, Regional Property Summit</li>
                 </ul>
-                <blockquote className="font-sans text-sm sm:text-base text-gray-700 leading-relaxed border-l-4 border-amber-500 pl-4 mb-8 italic">
+                <blockquote className="font-sans text-sm sm:text-base text-black leading-relaxed border-l-4 border-amber-500 pl-4 mb-8 italic">
                   “Optimization protects the asset, but community strategy builds true value. We don&apos;t just manage structures; we preserve and grow the legacy behind every estate.”
                 </blockquote>
                 <Link 

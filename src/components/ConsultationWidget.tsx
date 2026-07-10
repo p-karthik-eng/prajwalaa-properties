@@ -30,10 +30,10 @@ export default function ConsultationWidget() {
 
           {/* Widget Heading */}
           <div className="text-center mb-6">
-            <h3 className="text-xl md:text-2xl font-serif font-bold text-zinc-900 tracking-wide">
+            <h3 className="text-xl md:text-2xl font-serif font-bold text-black tracking-wide">
               Your Journey Starts Here
             </h3>
-            <p className="text-zinc-500 text-xs md:text-sm font-light mt-1">
+            <p className="text-black text-xs md:text-sm font-light mt-1">
               Connect with our real estate specialists and book your custom site consultation today.
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function ConsultationWidget() {
                 type="text" 
                 placeholder="Your Name*" 
                 required
-                className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
+                className="w-full bg-zinc-50 border border-zinc-200 text-black placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
               />
 
               {/* Input field: Phone */}
@@ -55,7 +55,7 @@ export default function ConsultationWidget() {
                 type="tel" 
                 placeholder="Phone Number*" 
                 required
-                className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
+                className="w-full bg-zinc-50 border border-zinc-200 text-black placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
               />
 
               {/* Input field: Email */}
@@ -63,12 +63,12 @@ export default function ConsultationWidget() {
                 type="email" 
                 placeholder="Email Address*" 
                 required
-                className="w-full bg-zinc-50 border border-zinc-200 text-zinc-900 placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
+                className="w-full bg-zinc-50 border border-zinc-200 text-black placeholder-zinc-400 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors"
               />
 
               {/* Selection Dropdown: Property Categories */}
               <select 
-                className="w-full bg-zinc-50 border border-zinc-200 text-zinc-700 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors appearance-none cursor-pointer"
+                className="w-full bg-zinc-50 border border-zinc-200 text-black rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#f59e0b] focus:bg-white transition-colors appearance-none cursor-pointer"
                 defaultValue=""
               >
                 <option value="" disabled hidden>Select Requirement*</option>

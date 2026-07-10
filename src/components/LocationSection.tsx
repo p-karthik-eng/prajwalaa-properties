@@ -6,27 +6,27 @@ import { Train, Navigation, Milestone, Route, Plane, Compass } from "lucide-reac
 export default function LocationSection() {
   const neighborhoodHighlights = [
     {
-      icon: <Train className="w-7 h-7 text-neutral-700" />,
+      icon: <Train className="w-7 h-7 text-black" />,
       distance: "2.5 Kms",
       title: "Chanda Nagar Railway Station",
     },
     {
-      icon: <Navigation className="w-7 h-7 text-neutral-700" />,
+      icon: <Navigation className="w-7 h-7 text-black" />,
       distance: "1.2 Kms",
       title: "Sridevi Theater Crossroads",
     },
     {
-      icon: <Route className="w-7 h-7 text-neutral-700" />,
+      icon: <Route className="w-7 h-7 text-black" />,
       distance: "4.0 Kms",
       title: "Miyapur Metro Station",
     },
     {
-      icon: <Milestone className="w-7 h-7 text-neutral-700" />,
+      icon: <Milestone className="w-7 h-7 text-black" />,
       distance: "6.5 Kms",
       title: "NH-65 (Mumbai Highway)",
     },
     {
-      icon: <Plane className="w-7 h-7 text-neutral-700" />,
+      icon: <Plane className="w-7 h-7 text-black" />,
       distance: "42 Kms",
       title: "Rajiv Gandhi International Airport (RGIA)",
     },
@@ -44,7 +44,7 @@ export default function LocationSection() {
         {/* Section Heading */}
         <div className="w-full flex items-center justify-center space-x-4 mb-12">
           <div className="h-[1px] bg-neutral-300 w-12 md:w-20 hidden sm:block"></div>
-          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-neutral-900 text-center">
+          <h2 className="text-3xl md:text-4xl font-light tracking-wide text-black text-center">
             Neighbourhood
           </h2>
           <div className="h-[1px] bg-neutral-300 w-12 md:w-20 hidden sm:block"></div>
@@ -69,10 +69,10 @@ export default function LocationSection() {
               {/* Header section */}
               <div className="flex items-start justify-between border-b border-neutral-100 pb-4 mb-6">
                 <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wider text-neutral-400 mb-1">
+                  <h3 className="text-xs font-semibold uppercase tracking-wider text-black mb-1">
                     Site Address
                   </h3>
-                  <p className="text-sm font-medium text-neutral-800 leading-relaxed">
+                  <p className="text-sm font-medium text-black leading-relaxed">
                     Chandanagar, Sridevi Theater Road,<br />
                     Krishna Vrindavan colony, Road Nos.3B & 4,<br />
                     Bandamkommu, Ameenpur - 502032.
@@ -97,10 +97,10 @@ export default function LocationSection() {
                       {item.icon}
                     </div>
                     <div className="flex flex-col">
-                      <span className="text-xs font-bold text-neutral-900 tracking-wide">
+                      <span className="text-xs font-bold text-black tracking-wide">
                         {item.distance}
                       </span>
-                      <span className="text-xs text-neutral-500 font-medium tracking-wide mt-0.5">
+                      <span className="text-xs text-black font-medium tracking-wide mt-0.5">
                         {item.title}
                       </span>
                     </div>
@@ -110,7 +110,7 @@ export default function LocationSection() {
             </div>
 
             {/* Subtle Footer Citation */}
-            <div className="text-[10px] text-neutral-400 font-medium tracking-wide pt-4 mt-6 border-t border-neutral-100">
+            <div className="text-[10px] text-black font-medium tracking-wide pt-4 mt-6 border-t border-neutral-100">
               Source: *Google Maps Proximity Analytics
             </div>
           </div>

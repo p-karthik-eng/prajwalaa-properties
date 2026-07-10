@@ -146,15 +146,15 @@ export default function AboutUs() {
             <span className="text-[#d39443] text-sm uppercase tracking-[0.25em] font-medium block mb-2">
               Who We Are
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide uppercase text-zinc-900">
+            <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide uppercase text-black">
               About <br />
-              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-zinc-900 to-zinc-500">
+              <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-black to-black">
                 Prajwaala Properties
               </span>
             </h2>
           </div>
           <p 
-            className={`text-zinc-600 max-w-xl mt-6 md:mt-0 text-md md:text-lg font-light leading-relaxed md:pl-6 reveal-node ${isVisible ? 'active' : ''}`}
+            className={`text-black max-w-xl mt-6 md:mt-0 text-md md:text-lg font-light leading-relaxed md:pl-6 reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '250ms' }}
           >
             Prajwaala Properties is a renowned real estate company based in Hyderabad, committed to delivering excellence in every project. With over 20+ years of experience in the industry, we have established a reputation for quality, innovation, and customer satisfaction.
@@ -162,56 +162,61 @@ export default function AboutUs() {
         </div>
 
         {/* --- CONTENT LAYOUT --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+        {/* CHANGED: Adjusted gap boundaries to cleanly fit the new profile footprint */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
           
-          {/* Left Column: Interactive Brand Identity Showcase & Stats Container */}
+          {/* Left Column: Highly Premium, Extended Identity Showcase Frame */}
+          {/* CHANGED: Boosted viewport distribution from span-5 to span-6 for a clean 50/50 balance split */}
           <div 
-            className={`lg:col-span-5 flex flex-col justify-between p-8 md:p-10 rounded-2xl bg-zinc-50 border border-zinc-200/80 shadow-[0_10px_30px_rgba(0,0,0,0.01)] border-l-4 border-l-[#d39443] reveal-node ${isVisible ? 'active' : ''}`}
+            className={`lg:col-span-6 flex flex-col justify-between p-6 sm:p-8 md:p-12 rounded-3xl bg-zinc-50 border border-zinc-200/80 shadow-[0_12px_40px_rgba(0,0,0,0.015)] border-l-4 border-l-[#d39443] reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '400ms' }}
           >
-            {/* Logo/Identity Wrapper Container - Increased size & added text details */}
+            {/* Identity Showcase Layout Box */}
             <div className="w-full flex flex-col items-center justify-center py-4">
-              <div className="relative w-full max-w-[360px] aspect-[4/3] mb-4">
+              {/* CHANGED: Scaled up maximum width limits from 460px to 540px for a bold presence */}
+              <div className="relative w-full max-w-[540px] aspect-[4/3] mb-8">
                 <Image
                   loader={cacheBustLoader}
                   src="/producer.png"
                   alt="Bosu Babu - Prajwaala Properties"
                   fill
-                  sizes="(max-w-1024px) 100vw, 40vw"
+                  sizes="(max-w-1024px) 100vw, 50vw"
                   className="object-contain"
                   priority
                 />
               </div>
-              {/* Added Person's Identity Label */}
+              
+              {/* Labels */}
               <div className="text-center">
-                <h3 className="font-serif text-2xl font-bold text-zinc-900 tracking-wide">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-black tracking-wide">
                   Bosu Babu
                 </h3>
-                <p className="text-xs uppercase tracking-[0.15em] text-[#d39443] font-medium mt-1">
+                <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#d39443] font-bold mt-2">
                   Founder &amp; Managing Director
                 </p>
               </div>
             </div>
 
             {/* Micro Stats Row inside Left Column */}
-            <div className="grid grid-cols-2 gap-4 mt-auto pt-8 border-t border-zinc-200">
+            <div className="grid grid-cols-2 gap-4 mt-auto pt-8 border-t border-zinc-200/80">
               <div>
-                <span className="block text-3xl font-bold font-serif text-zinc-900">
+                <span className="block text-3xl font-bold font-serif text-black">
                   {yearsCount}+ Yrs
                 </span>
-                <span className="text-xs uppercase tracking-wider text-zinc-400">Industry Experience</span>
+                <span className="text-xs uppercase tracking-wider text-black font-medium">Industry Experience</span>
               </div>
               <div>
                 <span className="block text-3xl font-bold font-serif text-[#d39443]">
                   M{concreteCount}+
                 </span>
-                <span className="text-xs uppercase tracking-wider text-zinc-400">Concrete Standard</span>
+                <span className="text-xs uppercase tracking-wider text-black font-medium">Concrete Standard</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Four Rotational One-by-One Animated Cards */}
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* CHANGED: Shifted space from span-7 to span-6 to sit seamlessly alongside the larger left column */}
+          <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Pillar 1 - Step 1 Active */}
             <div 
@@ -220,7 +225,7 @@ export default function AboutUs() {
             >
               <div>
                 <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-1">Uncompromised Quality</h4>
-                <p className="text-sm font-light leading-relaxed desc-1">
+                <p className="text-sm font-light leading-relaxed desc-1 text-black">
                   Utilizing heavy-gauge reinforced frameworks and verified premium materials, ensuring a standard of luxury that stands securely through generations.
                 </p>
               </div>

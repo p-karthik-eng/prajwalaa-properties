@@ -181,7 +181,7 @@ export default function TestimonialsSection() {
               >
                 {/* Quote Text */}
                 <div className="pt-6 mb-6">
-                  <p className="text-gray-700 font-normal italic leading-relaxed text-sm md:text-base">
+                  <p className="text-black font-normal italic leading-relaxed text-sm md:text-base">
                     "{testimonials[currentIndex].quote}"
                   </p>
                 </div>
@@ -214,7 +214,7 @@ export default function TestimonialsSection() {
           <div className="absolute top-1/2 -translate-y-1/2 left-2 right-2 md:-left-14 md:-right-14 flex justify-between pointer-events-none z-30">
             <button 
               onClick={handlePrev}
-              className="w-8 h-8 rounded-full border border-amber-100 bg-white shadow-md flex items-center justify-center text-gray-400 hover:text-[#d39443] hover:border-[#d39443] transition-all pointer-events-auto cursor-pointer hover:scale-105 active:scale-95"
+              className="w-8 h-8 rounded-full border border-amber-100 bg-white shadow-md flex items-center justify-center text-black hover:text-[#d39443] hover:border-[#d39443] transition-all pointer-events-auto cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Previous testimonial"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -223,7 +223,7 @@ export default function TestimonialsSection() {
             </button>
             <button 
               onClick={handleNext}
-              className="w-8 h-8 rounded-full border border-amber-100 bg-white shadow-md flex items-center justify-center text-gray-400 hover:text-[#d39443] hover:border-[#d39443] transition-all pointer-events-auto cursor-pointer hover:scale-105 active:scale-95"
+              className="w-8 h-8 rounded-full border border-amber-100 bg-white shadow-md flex items-center justify-center text-black hover:text-[#d39443] hover:border-[#d39443] transition-all pointer-events-auto cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Next testimonial"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -10,7 +10,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Navigation map with "Pricing" removed
+  // Navigation map
   const navLinks = [
     { name: "Home", href: "/", hasSub: false },
     { name: "About", href: "/about", hasSub: false },
@@ -81,18 +81,18 @@ export default function Navbar() {
               <span className="font-serif text-xl font-bold tracking-tight text-[#a64f17] uppercase truncate">
                 Prajwalaa
               </span>
-              <span className="text-[13px] font-sans font-bold tracking-wide text-neutral-800 uppercase shrink-0">
+              <span className="text-[13px] font-sans font-bold tracking-wide text-black uppercase shrink-0">
                 Ankura
               </span>
             </div>
-            <span className="text-[7.5px] font-sans font-semibold tracking-[0.16em] text-neutral-500 uppercase mt-1">
+            <span className="text-[7.5px] font-sans font-semibold tracking-[0.16em] text-black uppercase mt-1">
               Properties
             </span>
           </div>
         </Link>
 
-        {/* Center/Right Dynamic Desktop Horizontal Links */}
-        <nav className="hidden xl:flex items-center space-x-5 lg:space-x-7 text-[14px] font-medium text-neutral-700">
+        {/* Center/Right Desktop Links - CHANGED: Swapped text-[14px] font-medium to text-[15px] font-semibold */}
+        <nav className="hidden xl:flex items-center space-x-5 lg:space-x-7 text-[15px] font-semibold text-black">
           {navLinks.map((link, idx) => {
             const isActive = pathname === link.href;
             return (
@@ -101,9 +101,11 @@ export default function Navbar() {
                 href={link.href}
                 className={`relative group transition-colors flex items-center space-x-0.5 py-1.5 ${isActive ? 'text-[#a64f17]' : 'hover:text-[#a64f17]'}`}
               >
-                <span className="font-normal">{link.name}</span>
-                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#d39443] transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
-                {link.hasSub && <ChevronDown size={14} className="text-neutral-400 stroke-[2.5]" />}
+                {/* CHANGED: Swapped font-normal to font-semibold for crisp thickness */}
+                <span className="font-semibold">{link.name}</span>
+                {/* CHANGED: Increased the indicator bar layout height to h-[2.5px] to match text thickness balance */}
+                <span className={`absolute bottom-0 left-0 w-full h-[2.5px] bg-[#d39443] transition-transform duration-300 origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+                {link.hasSub && <ChevronDown size={14} className="text-black stroke-[2.5]" />}
               </Link>
             );
           })}
@@ -112,17 +114,17 @@ export default function Navbar() {
         {/* Mobile View Toggle Trigger Button */}
         <button 
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="xl:hidden p-1 text-neutral-700 hover:bg-neutral-50 rounded-md transition-colors"
+          className="xl:hidden p-1 text-black hover:bg-neutral-50 rounded-md transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </header>
 
-      {/* --- 3. MOBILE TARGET EXPANSION DRAWERS --- */}
+      {/* --- 3. MOBILE TARGET EXPANSION DRAWERS - CHANGED: Swapped font-medium to font-semibold --- */}
       {isMobileMenuOpen && (
         <div className="xl:hidden w-full bg-white border-b border-neutral-200 shadow-xl absolute top-full left-0 py-3 px-6 animate-in fade-in slide-in-from-top-2 duration-200">
-          <nav className="flex flex-col space-y-3 font-medium text-neutral-700">
+          <nav className="flex flex-col space-y-3 font-semibold text-black">
             {navLinks.map((link, idx) => {
               const isActive = pathname === link.href;
               return (
@@ -130,10 +132,10 @@ export default function Navbar() {
                   key={idx} 
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className={`transition-colors flex items-center justify-between border-b border-neutral-50 pb-2 text-[13px] ${isActive ? 'text-[#a64f17] font-semibold' : 'hover:text-[#a64f17]'}`}
+                  className={`transition-colors flex items-center justify-between border-b border-neutral-50 pb-2 text-[14px] ${isActive ? 'text-[#a64f17] font-bold' : 'hover:text-[#a64f17]'}`}
                 >
                   <span>{link.name}</span>
-                  {link.hasSub && <ChevronDown size={14} className="text-neutral-400" />}
+                  {link.hasSub && <ChevronDown size={14} className="text-black" />}
                 </Link>
               );
             })}
