@@ -40,7 +40,7 @@ export default function ExpertTeam() {
             Meet Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-amber-500">Expert Property Team</span>
           </h2>
           <p className="font-sans text-base sm:text-lg text-black max-w-2xl mx-auto leading-relaxed">
-            Led by Bosu Babu — certified wealth and asset specialist focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
+            Led by Nidumolu Bosu Babu — certified wealth and asset specialist focused on maximizing yield, compliance, and seamless oversight across our residential and commercial portfolios.
           </p>
         </motion.div>
 
@@ -91,25 +91,18 @@ export default function ExpertTeam() {
                   Meet The Man Behind The Brand
                 </p>
                 <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-1">
-                  Bosu Babu
+                  Nidumolu Bosu Babu
                 </h3>
                 <p className="font-sans text-base sm:text-lg font-semibold mb-1" style={{ color: '#513500' }}>
                   CPM® (Certified Property Manager)
                 </p>
-                <p className="font-sans text-sm sm:text-base font-medium text-black mb-4">
-                  Director &amp; Producer
-                </p>
-                <ul className="font-sans text-sm text-black space-y-2 mb-6" aria-label="Credentials and achievements">
-                  <li className="leading-snug">🏢 CPM®, Institute of Real Estate Management</li>
-                  <li className="leading-snug">🏅 RICS Chartered Asset Appraiser, UK &amp; USA</li>
-                  <li className="leading-snug">🥇 Best Yield Optimization Award, Regional Property Summit</li>
-                </ul>
+              
                 <blockquote className="font-sans text-sm sm:text-base text-black leading-relaxed border-l-4 border-amber-500 pl-4 mb-8 italic">
                   “Optimization protects the asset, but community strategy builds true value. We don&apos;t just manage structures; we preserve and grow the legacy behind every estate.”
                 </blockquote>
                 <Link 
                   className="inline-flex items-center gap-2 font-sans font-semibold text-amber-700 hover:text-amber-900 transition-colors group" 
-                  href="/experts/mohan-rayapudi"
+                  href="/about"
                 >
                   <span>Read More</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">

@@ -6,7 +6,6 @@ import Image from 'next/image';
 export default function AboutUs() {
   const [isVisible, setIsVisible] = useState(false);
   const [yearsCount, setYearsCount] = useState(0);
-  const [concreteCount, setConcreteCount] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   // Custom Image Loader to append cache-busting strings seamlessly
@@ -33,9 +32,8 @@ export default function AboutUs() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Kick off counts only once when section is revealed
+          // Kick off count only once when section is revealed
           animateCount(20, setYearsCount, 2000);
-          animateCount(30, setConcreteCount, 2000);
         }
       },
       { threshold: 0.15 }
@@ -144,7 +142,7 @@ export default function AboutUs() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 border-b border-zinc-200 pb-6 sm:pb-8">
           <div className={`reveal-node ${isVisible ? 'active' : ''}`} style={{ transitionDelay: '100ms' }}>
             <span className="text-[#d39443] text-sm uppercase tracking-[0.25em] font-medium block mb-2">
-              Who We Are
+              Our Story
             </span>
             <h2 className="text-4xl md:text-5xl font-serif font-light tracking-wide uppercase text-black">
               About <br />
@@ -154,26 +152,23 @@ export default function AboutUs() {
             </h2>
           </div>
           <p 
-            className={`text-black max-w-xl mt-6 md:mt-0 text-md md:text-lg font-light leading-relaxed md:pl-6 reveal-node ${isVisible ? 'active' : ''}`}
+            className={`text-zinc-700 max-w-xl mt-6 md:mt-0 text-md md:text-lg font-light leading-relaxed md:pl-6 reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '250ms' }}
           >
-            Prajwaala Properties is a renowned real estate company based in Hyderabad, committed to delivering excellence in every project. With over 20+ years of experience in the industry, we have established a reputation for quality, innovation, and customer satisfaction.
+            We don’t just build properties in Hyderabad; we build places where stories unfold. Over the past two decades, our journey has been shaped by a simple philosophy: treat every brick, every layout, and every client relationship with the deep care and integrity it deserves.
           </p>
         </div>
 
         {/* --- CONTENT LAYOUT --- */}
-        {/* CHANGED: Adjusted gap boundaries to cleanly fit the new profile footprint */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-stretch">
           
-          {/* Left Column: Highly Premium, Extended Identity Showcase Frame */}
-          {/* CHANGED: Boosted viewport distribution from span-5 to span-6 for a clean 50/50 balance split */}
+          {/* Left Column: Premium Identity Showcase Frame */}
           <div 
             className={`lg:col-span-6 flex flex-col justify-between p-6 sm:p-8 md:p-12 rounded-3xl bg-zinc-50 border border-zinc-200/80 shadow-[0_12px_40px_rgba(0,0,0,0.015)] border-l-4 border-l-[#d39443] reveal-node ${isVisible ? 'active' : ''}`}
             style={{ transitionDelay: '400ms' }}
           >
             {/* Identity Showcase Layout Box */}
             <div className="w-full flex flex-col items-center justify-center py-4">
-              {/* CHANGED: Scaled up maximum width limits from 460px to 540px for a bold presence */}
               <div className="relative w-full max-w-[540px] aspect-[4/3] mb-8">
                 <Image
                   loader={cacheBustLoader}
@@ -189,7 +184,7 @@ export default function AboutUs() {
               {/* Labels */}
               <div className="text-center">
                 <h3 className="font-serif text-3xl sm:text-4xl font-bold text-black tracking-wide">
-                  Bosu Babu
+                  Nidumolu Bosu Babu
                 </h3>
                 <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#d39443] font-bold mt-2">
                   Founder &amp; Managing Director
@@ -197,25 +192,20 @@ export default function AboutUs() {
               </div>
             </div>
 
-            {/* Micro Stats Row inside Left Column */}
-            <div className="grid grid-cols-2 gap-4 mt-auto pt-8 border-t border-zinc-200/80">
+            {/* Micro Stats Row inside Left Column - Now centered and solo */}
+            <div className="flex justify-center text-center mt-auto pt-8 border-t border-zinc-200/80">
               <div>
-                <span className="block text-3xl font-bold font-serif text-black">
-                  {yearsCount}+ Yrs
+                <span className="block text-4xl font-bold font-serif text-[#d39443]">
+                  {yearsCount}+ Years
                 </span>
-                <span className="text-xs uppercase tracking-wider text-black font-medium">Industry Experience</span>
-              </div>
-              <div>
-                <span className="block text-3xl font-bold font-serif text-[#d39443]">
-                  M{concreteCount}+
+                <span className="text-xs uppercase tracking-wider text-zinc-500 font-medium">
+                  Guiding the Industry with Trust
                 </span>
-                <span className="text-xs uppercase tracking-wider text-black font-medium">Concrete Standard</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Four Rotational One-by-One Animated Cards */}
-          {/* CHANGED: Shifted space from span-7 to span-6 to sit seamlessly alongside the larger left column */}
           <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-6">
             
             {/* Pillar 1 - Step 1 Active */}
@@ -224,9 +214,9 @@ export default function AboutUs() {
               style={{ transitionDelay: '500ms' }}
             >
               <div>
-                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-1">Uncompromised Quality</h4>
+                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-1">Built to Last</h4>
                 <p className="text-sm font-light leading-relaxed desc-1 text-black">
-                  Utilizing heavy-gauge reinforced frameworks and verified premium materials, ensuring a standard of luxury that stands securely through generations.
+                  We refuse to cut corners. By sourcing exceptionally premium materials and anchoring our architecture in heavy-gauge reinforced frames, we create safer structures that your family can lean on for generations.
                 </p>
               </div>
             </div>
@@ -237,9 +227,9 @@ export default function AboutUs() {
               style={{ transitionDelay: '600ms' }}
             >
               <div>
-                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-2">Forward Innovation</h4>
+                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-2">Intelligent Design</h4>
                 <p className="text-sm font-light leading-relaxed desc-2">
-                  Configuring modern, open-plan layout dynamics optimized completely for cross-ventilation, abundant natural illumination, and premium spatial architecture.
+                  A home should breathe. Our open-plan spaces are carefully balanced to draw in rich natural illumination and continuous airflow, turning functional modern floor plans into genuinely refreshing sanctuaries.
                 </p>
               </div>
             </div>
@@ -250,9 +240,9 @@ export default function AboutUs() {
               style={{ transitionDelay: '700ms' }}
             >
               <div>
-                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-3">Customer Satisfaction</h4>
+                <h4 className="text-xl font-serif mb-3 tracking-wide font-bold title-3">People First</h4>
                 <p className="text-sm font-light leading-relaxed desc-3">
-                  Honoring clear operational transparency, strictly seamless delivery timelines, and dedicated post-handover customer care infrastructure.
+                  For us, handing over the keys is just the beginning. We base our reputation on total transparency, realistic timelines, and a supportive, long-term customer care framework that is always there when you need us.
                 </p>
               </div>
             </div>
@@ -264,7 +254,7 @@ export default function AboutUs() {
             >
               <span className="text-xs uppercase tracking-widest font-bold opacity-60 mb-2">Our Creed</span>
               <p className="font-serif text-lg font-medium leading-snug">
-                "Form follows purpose, but excellence builds long-lasting legacies."
+                "Houses are built by hands, but true legacies are built on trust, design, and absolute transparency."
               </p>
             </div>
 

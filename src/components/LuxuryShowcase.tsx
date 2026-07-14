@@ -17,49 +17,49 @@ export default function LuxuryShowcase() {
     {
       id: 1,
       title: "Grand Lobby",
-      description: "Step into an arrival experience designed to make a statement. Prajwalaa Properties redefines grandeur with a soaring grand lobby, featuring monolithic marble flooring, bespoke ambient lighting installations, and dedicated concierge zones that mirror the aesthetic of an international five-star resort hotel.",
+      description: "A welcoming space designed to make arriving home feel like a special occasion. With its warm, thoughtful lighting, beautiful natural stone underfoot, and a comfortable seating area, it is a peaceful transition zone where you can pause, catch your breath, and always feel completely looked after.",
       desktopImg: "/grand-lobby.jpg",
       mobileImg: "/sites/default/files/2024-04/USP1_Lodha-Bellevue_390X347.jpg",
     },
     {
       id: 2,
-      title: "Gym",
-      description: "Our high-performance wellness center transitions you smoothly from high-stress workdays to holistic physical health. Equipped with professional-grade strength training matrices, dedicated cardio decks, and functional movement zones, it offers an exclusive training space with panoramic external vistas.",
+      title: "Fitness Center",
+      description: "A bright, energetic space created to help you switch off from work and focus on yourself. Fully equipped with modern cardio and strength equipment, this welcoming workout zone offers beautiful views of the outside world to keep you inspired while you move.",
       desktopImg: "/gym.jpg",
       mobileImg: "/sites/default/files/2024-04/USP2_Lodha-Bellevue_390X347.jpg",
     },
     {
       id: 3,
-      title: "Swimming pool",
-      description: "Immerse yourself in our pristine crystal-blue swimming pool oasis. Designed with an elegant infinity edge, premium poolside lounge decks, and beautifully curated tile details, it offers the ultimate structural sanctuary for an early morning swim or a relaxed evening unwind.",
+      title: "Swimming Pool",
+      description: "A calm, crystal-clear escape right outside your door. Whether you love starting your mornings with quiet, peaceful laps or prefer cooling off with your family as the sun sets, our beautifully designed poolside deck is the perfect spot to unwind and clear your mind.",
       desktopImg: "/gallery2.jpeg",
       mobileImg: "/sites/default/files/2026-03/USP3_Lodha-Bellevue_390X347.jpg",
     },
     {
       id: 4,
-      title: "Indoor Games",
-      description: "Unwind within thoughtfully designed indoor recreation arenas and social lounges. From premium billiards arrays to calculated board game spaces, these temperature-controlled environments serve as the central social fabric where like-minded neighbors connect, compete, and relax.",
+      title: "Indoor Games Lounge",
+      description: "The social heartbeat of the community. This comfortable, lively room features classic board games and a premium billiards table, offering a friendly space where neighbors naturally come together to share a laugh, compete, and relax.",
       desktopImg: "/indoor-games.jpg",
       mobileImg: "/sites/default/files/2024-04/USP4_Lodha-Bellevue_390X347.jpg",
     },
     {
       id: 5,
-      title: "Yoga/Meditation hall",
-      description: "Escape the fast-paced cityscape within our sound-insulated mindfulness and yoga pavilion. Bathed in balanced natural morning light and surrounded by subtle design choices, this serene room is dedicated entirely to mental clarity, core alignment, and absolute personal peace.",
+      title: "Yoga & Meditation Studio",
+      description: "A quiet, sound-insulated sanctuary designed to shut out the noise of the city. Flooded with soft morning light, this open and peaceful room provides a dedicated space for yoga, quiet reflection, and finding your personal balance.",
       desktopImg: "/yoga.jpg",
       mobileImg: "/sites/default/files/2024-04/USP5_Lodha-Bellevue_390X347.jpg",
     },
     {
       id: 6,
-      title: "Guest Rooms",
-      description: "Host your visitors with hospitality that matches elite hotel hospitality templates. These elegantly finished luxury guest suites feature integrated modular conveniences, deep-palette texturing, and complete acoustic screening to ensure your family and associates enjoy absolute comfort.",
+      title: "Guest Suites",
+      description: "Host your loved ones with total confidence. Our thoughtfully finished guest rooms are built to offer the comfort of a boutique hotel, giving your friends and family their own quiet, private space to rest and feel truly at home.",
       desktopImg: "/guest-rooms.avif",
       mobileImg: "/sites/default/files/2024-04/guest-rooms-thumb.jpg",
     },
     {
       id: 7,
       title: "Multipurpose Hall",
-      description: "Celebrate the milestone moments of life within a majestic banquet framework. Our expansive multipurpose hall combines high-ceiling clearance architectures, sophisticated acoustic treatment arrays, and dynamic layout capabilities perfect for premier social galas or close family events.",
+      description: "From cozy family gatherings to major life milestones, this beautiful, high-ceilinged hall is built for sharing moments together. Designed with excellent acoustics and a flexible layout, it easily transforms to fit whatever celebration you are hosting.",
       desktopImg: "/multipurpose-hall.jpg",
       mobileImg: "/sites/default/files/2024-04/multipurpose-hall-thumb.jpg",
     }
@@ -102,7 +102,7 @@ export default function LuxuryShowcase() {
   return (
     <section className="relative w-full bg-gradient-to-b from-amber-50/40 via-[#fffdf9] to-white text-[#111111] py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-16 lg:px-24 font-sans overflow-hidden border-t border-amber-200/50">
       
-      {/* --- EXTRA INTENSIFIED FLOATING YELLOW BACKGROUND CARDS (9 SHAPES) --- */}
+      {/* --- FLOATING BACKGROUND ELEMENTS (9 SHAPES) --- */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-90">
         
         {/* Shape 1 - Top Left */}
@@ -129,7 +129,7 @@ export default function LuxuryShowcase() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         />
 
-        {/* Shape 4 - Lower Center Left (NEW ADDTIONAL ACCENT) */}
+        {/* Shape 4 - Lower Center Left */}
         <motion.div 
           className="absolute w-48 h-64 rounded-3xl border-[2.5px] border-amber-400/35 bg-amber-400/[0.05]"
           style={{ top: '58%', left: '25%' }}
@@ -137,7 +137,7 @@ export default function LuxuryShowcase() {
           transition={{ duration: 8.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
         />
 
-        {/* Shape 5 - Mid Center Right (NEW ADDTIONAL ACCENT) */}
+        {/* Shape 5 - Mid Center Right */}
         <motion.div 
           className="absolute w-64 h-64 rounded-[2rem] border-[3px] border-amber-300/25 bg-amber-400/[0.06] rotate-12"
           style={{ top: '48%', right: '12%' }}
@@ -161,7 +161,7 @@ export default function LuxuryShowcase() {
           transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         />
 
-        {/* Shape 8 - Top Mid-Right Anchor (NEW ADDITIONAL ACCENT) */}
+        {/* Shape 8 - Top Mid-Right Anchor */}
         <motion.div 
           className="absolute w-40 h-40 rounded-2xl border-[3px] border-amber-400/40 bg-amber-400/[0.08] rotate-45"
           style={{ top: '2%', right: '32%' }}
@@ -169,7 +169,7 @@ export default function LuxuryShowcase() {
           transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        {/* Shape 9 - Extreme Bottom Center-Right Grid (NEW ADDITIONAL ACCENT) */}
+        {/* Shape 9 - Extreme Bottom Center-Right Grid */}
         <motion.div 
           className="absolute w-80 h-36 rounded-[2rem] border-[2.5px] border-amber-400/20 bg-amber-300/[0.04]"
           style={{ bottom: '4%', right: '40%' }}
@@ -178,12 +178,12 @@ export default function LuxuryShowcase() {
         />
       </div>
 
-      {/* Intensified structural linear background grid overlay */}
+      {/* Structural linear background grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#d3944307_1px,transparent_1px),linear-gradient(to_bottom,#d3944307_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none z-0" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* --- BRAND INTRODUCTION HEADER --- */}
+        {/* --- SECTION HEADER --- */}
         <motion.div 
           className="flex flex-col items-center text-center mb-14 md:mb-20 max-w-3xl mx-auto"
           initial="hidden"
@@ -195,16 +195,16 @@ export default function LuxuryShowcase() {
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
-            <span className="text-xs tracking-wide uppercase">Elite Experiences</span>
+            <span className="text-xs tracking-wide uppercase">Designed for Life</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-black mb-4 tracking-wide">
-            World-Class Amenities
+            Spaces to Gather and Grow
           </h1>
           <div className="w-16 h-[2px] bg-amber-500 mb-6" />
-          <p className="text-black font-normal leading-relaxed text-sm sm:text-base md:text-lg">
-            Experience an elite lifestyle infrastructure built to bring absolute luxury, health, 
-            <br className="hidden md:block" /> and balanced social wellness straight to your doorstep.
+          <p className="text-zinc-700 font-light leading-relaxed text-sm sm:text-base md:text-lg">
+            Every corner of our community is built around your well-being. Discover inviting layout spaces 
+            <br className="hidden md:block" /> designed to help you stay active, rest deeply, and spend meaningful time together.
           </p>
         </motion.div>
 
@@ -247,7 +247,7 @@ export default function LuxuryShowcase() {
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-transparent via-black/[0.01] to-black/[0.02]" />
                 </motion.div>
 
-                {/* Text Content Block Shell */}
+                {/* Text Content Block */}
                 <motion.div 
                   className={`flex flex-col justify-center lg:col-span-6 ${
                     isEven ? 'lg:order-2 lg:pl-4' : 'lg:order-1 lg:pr-4'
@@ -261,7 +261,7 @@ export default function LuxuryShowcase() {
                     {item.title}
                   </h2>
                   <div className="w-12 h-[2px] bg-amber-500 mb-4 sm:mb-6" />
-                  <p className="text-black font-light text-sm sm:text-base leading-relaxed">
+                  <p className="text-zinc-700 font-light text-sm sm:text-base leading-relaxed">
                     {item.description}
                   </p>
                 </motion.div>
