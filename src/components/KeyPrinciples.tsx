@@ -38,7 +38,7 @@ export default function KeyPrinciples() {
     }
   ];
 
-  // Duplicated only for the desktop marquee loop
+  // Duplicated to create a seamless infinite loop illusion across the viewport wide tracks
   const duplicatedPrinciples = [...principles, ...principles, ...principles];
 
   const headerVariants: Variants = {
@@ -104,58 +104,40 @@ export default function KeyPrinciples() {
           </p>
         </motion.div>
 
-        {/* --- CAROUSEL LOOP FOR DESKTOP --- */}
+        {/* --- UNIFIED RIGHT-TO-LEFT MEDIUM SPEED LOOP SYSTEM --- */}
         <style dangerouslySetInnerHTML={{__html: `
-          @keyframes principlesMarquee {
+          @keyframes unifiedMarquee {
             0% { transform: translateX(0%); }
-            100% { transform: translateX(calc(-33.333% - 16px)); }
+            100% { transform: translateX(calc(-33.333% - 10.666px)); } /* Aligns perfectly with the grid gaps */
           }
-          .principles-marquee-track {
+          .global-marquee-track {
             display: flex;
-            gap: 32px;
-            animation: principlesMarquee 12s linear infinite;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            gap: 16px;
+            width: max-content;
+            animation: unifiedMarquee 20s linear infinite; /* Paced nicely at a uniform medium speed */
           }
-          .principles-marquee-track:hover {
+          @media (min-width: 768px) {
+            @keyframes unifiedMarqueeDesktop {
+              0% { transform: translateX(0%); }
+              100% { transform: translateX(calc(-33.333% - 21.333px)); }
+            }
+            .global-marquee-track {
+              gap: 32px;
+              animation: unifiedMarqueeDesktop 22s linear infinite;
+            }
+          }
+          .global-marquee-track:hover,
+          .global-marquee-track:active {
             animation-play-state: paused;
           }
         `}} />
 
-        {/* --- RESPONSIVE CARDS CONTAINER --- */}
-        {/* MOBILE VIEW: Clean, accessible structural vertical grid */}
-        <div className="block md:hidden px-4 space-y-6 relative z-10">
-          {principles.map((item, index) => (
-            <div 
-              key={`mobile-${item.id}`}
-              className="w-full relative p-6 bg-white/95 backdrop-blur-sm border border-amber-200/60 rounded-2xl flex flex-col justify-between shadow-sm"
-            >
-              <span className="absolute right-6 top-5 font-serif text-2xl font-bold text-black/30">
-                {item.id}
-              </span>
-              <div>
-                <h3 className="text-xl font-serif font-bold text-[#1c1c1c] tracking-wide mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-zinc-700 text-sm font-light leading-relaxed mb-4">
-                  {item.description}
-                </p>
-              </div>
-              <ul className="space-y-2 pt-4 border-t border-amber-200/40">
-                {item.features.map((feature, fIdx) => (
-                  <li key={fIdx} className="flex items-center space-x-2 text-xs text-zinc-800">
-                    <svg className="w-3.5 h-3.5 text-[#d39443] shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span className="font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* DESKTOP VIEW: High-speed dynamic rolling track */}
-        <div className="hidden md:relative md:block w-full overflow-hidden py-4">
-          <div className="principles-marquee-track shrink-0">
+        {/* --- ONE ROW SINGLE MARQUEE VIEWPORT WRAPPER --- */}
+        <div className="w-full overflow-hidden py-4 relative flex flex-row flex-nowrap">
+          
+          <div className="global-marquee-track shrink-0 px-4 md:px-8">
             {duplicatedPrinciples.map((item, index) => {
               const backgroundColors = [
                 "bg-white/95 backdrop-blur-md", 
@@ -167,8 +149,9 @@ export default function KeyPrinciples() {
 
               return (
                 <motion.div 
-                  key={`${item.id}-${index}`}
-                  className={`w-[360px] shrink-0 group relative p-8 ${cardBg} border border-amber-200/60 rounded-2xl flex flex-col justify-between whitespace-normal cursor-pointer shadow-md`}
+                  key={`card-${item.id}-${index}`}
+                  // Calculated sizing maintains exactly 3 visible cards on desktop viewports safely
+                  className={`w-[280px] md:w-[calc((100vw-64px-64px)/3)] md:max-w-[380px] shrink-0 group relative p-6 md:p-8 ${cardBg} border border-amber-200/60 rounded-2xl flex flex-col justify-between whitespace-normal cursor-pointer shadow-md`}
                   whileHover={{ 
                     y: -6, 
                     borderColor: "rgba(211, 148, 67, 0.7)",
@@ -176,23 +159,23 @@ export default function KeyPrinciples() {
                     transition: { duration: 0.3, ease: "easeOut" }
                   }}
                 >
-                  <span className="absolute right-6 top-5 font-serif text-3xl font-bold text-black/40 group-hover:text-[#d39443]/40 transition-colors duration-300">
+                  <span className="absolute right-6 top-5 font-serif text-2xl md:text-3xl font-bold text-black/30 md:text-black/40 group-hover:text-[#d39443]/40 transition-colors duration-300">
                     {item.id}
                   </span>
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-serif font-bold text-[#1c1c1c] tracking-wide mb-3 group-hover:text-[#d39443] transition-colors duration-300">
+                    <h3 className="text-lg md:text-2xl font-serif font-bold text-[#1c1c1c] tracking-wide mb-2 md:mb-3 group-hover:text-[#d39443] transition-colors duration-300">
                       {item.title}
                     </h3>
-                    <p className="text-zinc-700 text-sm font-light leading-relaxed mb-6">
+                    <p className="text-zinc-700 text-xs md:text-sm font-light leading-relaxed mb-4 md:mb-6">
                       {item.description}
                     </p>
                   </div>
 
-                  <ul className="space-y-2.5 pt-4 border-t border-amber-200/40 mt-auto">
+                  <ul className="space-y-2 md:space-y-2.5 pt-4 border-t border-amber-200/40 mt-auto">
                     {item.features.map((feature, fIdx) => (
-                      <li key={fIdx} className="flex items-start space-x-2 text-xs md:text-sm text-zinc-800">
-                        <svg className="w-4 h-4 text-[#d39443] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <li key={fIdx} className="flex items-start space-x-2 text-[11px] md:text-sm text-zinc-800">
+                        <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#d39443] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                         <span className="font-medium">{feature}</span>
@@ -205,8 +188,8 @@ export default function KeyPrinciples() {
           </div>
 
           {/* Vignette Overlays for Smooth Edge Transitions */}
-          <div className="absolute top-0 bottom-0 left-0 w-16 bg-gradient-to-r from-[#fffdf9] via-[#fffdf9]/30 to-transparent pointer-events-none z-20" />
-          <div className="absolute top-0 bottom-0 right-0 w-16 bg-gradient-to-l from-[#fffdf9] via-[#fffdf9]/30 to-transparent pointer-events-none z-20" />
+          <div className="absolute top-0 bottom-0 left-0 w-8 md:w-16 bg-gradient-to-r from-[#fffdf9] via-[#fffdf9]/30 to-transparent pointer-events-none z-20" />
+          <div className="absolute top-0 bottom-0 right-0 w-8 md:w-16 bg-gradient-to-l from-[#fffdf9] via-[#fffdf9]/30 to-transparent pointer-events-none z-20" />
         </div>
 
       </div>
