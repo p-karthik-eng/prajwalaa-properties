@@ -91,7 +91,7 @@ export default function VideoSection() {
           {/* HTML5 Video Element - Auto Looping (Controlled by React ref) */}
           <video
             ref={videoRef}
-            src="/video.mp4"
+            src="/video2.mp4"
             className="w-full h-full object-cover"
             autoPlay
             loop
